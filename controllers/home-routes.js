@@ -57,7 +57,7 @@ router.get('/:id', (req,res) => {
         console.log(err);
         res.status(404).json(err);
     });
-})
+});
 
 
 

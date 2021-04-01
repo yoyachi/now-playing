@@ -12,19 +12,7 @@ router.get('/', (req,res) => {
         res.status(500).json(err);
     });
 });
-// get one user
-router.get('/:id', (req,res) => {
-    User.findOne({
-        attributes: { exclude: ['password'] },
-        where: {
-            id: req.params.id
-        }
-    }).then(data => res.json(data))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
+
 // create user
 router.post('/', (req,res) => {
     User.create({
@@ -79,6 +67,19 @@ router.post('/login', (req, res) => {
       res.status(404).end();
     }
   });
+  // get one user
+router.get('/:id', (req,res) => {
+  User.findOne({
+      attributes: { exclude: ['password'] },
+      where: {
+          id: req.params.id
+      }
+  }).then(data => res.json(data))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
 // update user
 router.put('/:id', (req,res) => {
     User.update(req.body, {

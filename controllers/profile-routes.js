@@ -4,7 +4,7 @@ const { User, Post } = require('../models');
 
 // homepage
 router.get('/user', (req,res) => {
-    if(!req.session.login) {
+    if(!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
@@ -20,15 +20,26 @@ router.get('/user', (req,res) => {
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
-        res.json(posts);
+        res.render('profile', {
+            posts,
+            loggedIn: true
+        });
     }).catch(err => {
         console.log(err);
         res.status(404).json(err);
     });
 });
+// page to create a post
+router.get('/post', (req,res) => {
+    if(!req.session.loggedIn) {
+        res.redirect('/login');
+        return;
+    }
+    res.json({ message: 'this page will be to create a post' });
+});
 // edit users information
 router.get('/edit-post/:id', (req,res) => {
-    if(!req.session.login) {
+    if(!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
@@ -45,14 +56,7 @@ router.get('/edit-post/:id', (req,res) => {
         res.status(400).json(err);
     });
 });
-// page to create a post
-router.get('/post', (req,res) => {
-    if(!req.session.login) {
-        res.redirect('/login');
-        return;
-    }
-    res.json({ message: 'this page will be to create a post' });
-});
+
 
 
 module.exports = router;
