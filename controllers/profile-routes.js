@@ -26,6 +26,14 @@ router.get('/user', (req,res) => {
         res.status(404).json(err);
     });
 });
+// page to create a post
+router.get('/post', (req,res) => {
+    if(!req.session.login) {
+        res.redirect('/login');
+        return;
+    }
+    res.json({ message: 'this page will be to create a post' });
+});
 // edit users information
 router.get('/edit-post/:id', (req,res) => {
     if(!req.session.login) {
@@ -45,14 +53,7 @@ router.get('/edit-post/:id', (req,res) => {
         res.status(400).json(err);
     });
 });
-// page to create a post
-router.get('/post', (req,res) => {
-    if(!req.session.login) {
-        res.redirect('/login');
-        return;
-    }
-    res.json({ message: 'this page will be to create a post' });
-});
+
 
 
 module.exports = router;
