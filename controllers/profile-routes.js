@@ -23,7 +23,8 @@ router.get('/user', (req,res) => {
         res.render('profile', {
             posts,
             loggedIn: true,
-            username: req.session.username
+            username: req.session.username,
+            email: req.session.email
         });
     }).catch(err => {
         console.log(err);
