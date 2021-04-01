@@ -27,7 +27,7 @@ router.post('/', (req,res) => {
         album_title: req.body.album_title,
         genre: req.body.genre,
         photo_url: req.body.photo_url,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     }).then(data => res.json(data)).catch(err => {
         console.log(err);
         res.status(404).json(err);
