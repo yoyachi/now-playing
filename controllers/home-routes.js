@@ -7,6 +7,11 @@ router.get('/login', (req,res) => {
     res.render("login");
 });
 
+// singup page
+router.get('/signup', (req,res) => {
+    res.render("signup");
+});
+
 // homepage
 router.get('/', (req,res) => {
     Post.findAll({
