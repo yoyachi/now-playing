@@ -2,16 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Post } = require('../models');
 
-// login page
-router.get('/login', (req,res) => {
-    res.render("login");
-});
-
-// singup page
-router.get('/signup', (req,res) => {
-    res.render("signup");
-});
-
 // homepage
 router.get('/', (req,res) => {
     Post.findAll({
@@ -32,6 +22,22 @@ router.get('/', (req,res) => {
         res.status(404).json(err);
     });
 });
+
+// profile page
+router.get('/profile', (req,res) => {
+    res.render("profile");
+});
+
+// login page
+router.get('/login', (req,res) => {
+    res.render("login");
+});
+
+// singup page
+router.get('/signup', (req,res) => {
+    res.render("signup");
+});
+
 // users page
 router.get('/:id', (req,res) => {
     Post.findAll({
