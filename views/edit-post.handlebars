@@ -8,7 +8,7 @@
     </div>
     <div>
       <label for="post-album">Album Title</label>
-      <input type="text" id="post-album" name="post-album" />
+      <input type="text" id="post-album" name="post-album" value="{{post.album_title}}"/>
     </div>
      <div>
       <label for="post-genre">Genre</label>
@@ -32,8 +32,10 @@
     </div>
     <div>
       <label for="post-photo">Photo</label>
-      <input type="text" id="post-photo" name="post-photo" />
+      <input type="text" id="post-photo" name="post-photo" value="{{post.photo_url}}"/>
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
+
+<script src="/javascript/edit-post.js"></script>
