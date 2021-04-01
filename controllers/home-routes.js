@@ -2,6 +2,11 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Post } = require('../models');
 
+// login page
+router.get('/login', (req,res) => {
+    res.render("login");
+});
+
 // homepage
 router.get('/', (req,res) => {
     Post.findAll({
@@ -43,10 +48,7 @@ router.get('/:id', (req,res) => {
     });
 })
 
-// login page
-router.get('/login', (req,res) => {
-    res.render("login");
-});
+
 
 
 
