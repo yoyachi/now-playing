@@ -53,7 +53,10 @@ router.get('/edit-post/:id', (req,res) => {
         }
     }).then(data => {
         const post = data.get({ plain: true });
-        res.json(post);
+        res.render('edit-post', {
+            post,
+            loggedIn: true
+        });
     }).catch(err => {
         console.log(err);
         res.status(400).json(err);

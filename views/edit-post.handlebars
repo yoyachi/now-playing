@@ -1,0 +1,39 @@
+<section>
+  <h2>Edit post!</h2>
+
+ <form class="add-post-form">
+    <div>
+      <label for="post-artist">Artist</label>
+      <input type="text" id="post-artist" name="post-artist" value="{{post.artist}}"/>
+    </div>
+    <div>
+      <label for="post-album">Album Title</label>
+      <input type="text" id="post-album" name="post-album" />
+    </div>
+     <div>
+      <label for="post-genre">Genre</label>
+      <select type="text" id="post-genre" name="post-genre">
+            <option value="Rock">Rock</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Pop">Pop</option>
+            <option value="Funk-Soul">Funk/Soul</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Folk">Folk</option>
+            <option value="World">World</option>
+            <option value="Country">Country</option>
+            <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
+            <option value="Classical">Classical</option>
+            <option value="Musicals">Musicals</option>
+            <option value="Reggae">Reggae</option>
+            <option value="Latin">Latin</option>
+            <option value="Blues">Blues</option>
+            <option value="Comedy">Comedy</option>
+      </select>     
+    </div>
+    <div>
+      <label for="post-photo">Photo</label>
+      <input type="text" id="post-photo" name="post-photo" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>

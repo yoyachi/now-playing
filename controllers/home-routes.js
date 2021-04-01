@@ -37,9 +37,9 @@ router.get('/login', (req,res) => {
 router.get('/signup', (req,res) => {
     res.render("signup");
 });
-// users page
-router.get('/:id', (req,res) => {
-    Post.findAll({
+// single post
+router.get('/post/:id', (req,res) => {
+    Post.findOne({
         where: {
             id: req.params.id
         },
@@ -50,8 +50,8 @@ router.get('/:id', (req,res) => {
             }
         ]
     }).then(data => {
-        const posts = data.map(post => post.get({ plain: true }));
-        res.json(posts);
+        const posts = data.get({ plain: true });
+        res.render('single-post', { posts });
     }).catch(err => {
         console.log(err);
         res.status(404).json(err);
