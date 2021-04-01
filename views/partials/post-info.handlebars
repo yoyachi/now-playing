@@ -1,8 +1,12 @@
 <article class="post">
     <div class="title">
-    <img src="{{photo_url}}" alt="Album Photo">
-    <h2>Artist: {{artist}}</h2>
-    <h2>Album Title: {{album_title}}</h2>
-    <h2>Genre: {{album_title}}</h2>
+    <a href="/post/{{id}}" target="_blank">{{album_title}}</a>
+    <span>by {{user.username}} on {{created_at}}</span>
+    </div>
+    <div class="post-text">
+        <img src="{{photo_url}}" alt="Album Photo">
+        <p>Artist: {{artist}}</p>
+        <p>Album Title: {{album_title}}</p>
+        <p>Genre: {{genre}}</p>
     </div>
 </article>
