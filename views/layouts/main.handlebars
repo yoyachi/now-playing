@@ -48,9 +48,15 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
+  {{#if loggedIn}}
+  <button id="logout" class="btn-no-style">logout</button>
+  {{/if}} 
 </nav>
 <main>
 {{{ body }}}
 </main>
+{{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 </html>
