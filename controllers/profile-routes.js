@@ -15,27 +15,30 @@ router.get('/user', (req,res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'email']
             }
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
         res.render('profile', {
             posts,
-            loggedIn: true
+            loggedIn: true,
+            username: req.session.username,
+            email: req.session.email
         });
     }).catch(err => {
         console.log(err);
         res.status(404).json(err);
     });
 });
+
 // page to create a post
 router.get('/post', (req,res) => {
     if(!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
-    res.json({ message: 'this page will be to create a post' });
+    res.render("add-post");
 });
 // edit users information
 router.get('/edit-post/:id', (req,res) => {

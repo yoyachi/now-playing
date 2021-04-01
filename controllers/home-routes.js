@@ -37,7 +37,6 @@ router.get('/login', (req,res) => {
 router.get('/signup', (req,res) => {
     res.render("signup");
 });
-
 // users page
 router.get('/:id', (req,res) => {
     Post.findAll({
