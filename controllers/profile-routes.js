@@ -15,14 +15,15 @@ router.get('/user', (req,res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'email']
             }
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
         res.render('profile', {
             posts,
-            loggedIn: true
+            loggedIn: true,
+            username: req.session.username
         });
     }).catch(err => {
         console.log(err);
