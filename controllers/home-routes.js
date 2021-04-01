@@ -13,7 +13,10 @@ router.get('/', (req,res) => {
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
-        res.json(posts);
+        res.render('homepage', {
+            posts,
+            loggedIn: req.session.loggedIn
+          });
     }).catch(err => {
         console.log(err);
         res.status(404).json(err);
@@ -39,9 +42,10 @@ router.get('/:id', (req,res) => {
         res.status(404).json(err);
     });
 })
+
 // login page
 router.get('/login', (req,res) => {
-    res.json({message: 'this will be the login page '});
+    res.render("login");
 });
 
 
