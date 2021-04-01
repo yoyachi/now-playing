@@ -38,7 +38,7 @@ router.get('/post', (req,res) => {
         res.redirect('/login');
         return;
     }
-    res.json({ message: 'this page will be to create a post' });
+    res.render("add-post");
 });
 // edit users information
 router.get('/edit-post/:id', (req,res) => {
