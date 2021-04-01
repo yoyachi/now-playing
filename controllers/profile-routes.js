@@ -31,6 +31,7 @@ router.get('/user', (req,res) => {
         res.status(404).json(err);
     });
 });
+
 // page to create a post
 router.get('/post', (req,res) => {
     if(!req.session.loggedIn) {

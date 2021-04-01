@@ -1,6 +1,7 @@
-{{username}}
-{{email}}
-
+<section>
+    <h2>Username: {{username}}</h2>
+    <h2>Email: {{email}}</h2>
+</section>
 
 {{#if posts.length}}
 <section>
@@ -9,11 +10,11 @@
     {{#each posts as |post|}}
     <li class="post-info">
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+      <a href="/p/edit/{{post.id}}" class="edit-link">Edit Post</a>
     </li>
     {{/each}}
   </ul>
 </section>
 {{/if}}
 
-<a class="add-post-link" href="/dashboard/add-post"> + New Post</a>
+<a class="add-post-link" href="/profile/post"> + New Post</a>
