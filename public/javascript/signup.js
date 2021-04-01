@@ -19,7 +19,7 @@ async function signupFormHandler(event) {
   
       // check the response status
       if (response.ok) {
-        document.location.replace('/profile')
+        document.location.replace('/profile/user');
       } else {
         alert(response.statusText);
       }
