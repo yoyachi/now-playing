@@ -71,7 +71,10 @@ router.get('/post/:id', (req,res) => {
         ]
     }).then(data => {
         const posts = data.get({ plain: true });
-        res.render('single-post', { posts });
+        res.render('single-post', {
+            posts,
+            loggedIn: req.session.loggedIn
+        });
     }).catch(err => {
         console.log(err);
         res.status(404).json(err);
