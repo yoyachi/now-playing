@@ -22,6 +22,15 @@ router.post('/', (req,res) => {
 
 router.put('/:id');
 
-router.delete('/:id');
+router.delete('/:id', (req,res) => {
+    Comment.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(data => res.json(data)).catch(err => {
+        console.log(err);
+        res.status(404).json(err);
+    })
+});
 
 module.exports = router;
