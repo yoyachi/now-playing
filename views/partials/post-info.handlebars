@@ -10,6 +10,6 @@
         <p>Genre: {{genre}}</p>
     </div>
         <div class="meta">
-        {{comments.length}} 
-        </div>
+    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+  </div>
 </article>
