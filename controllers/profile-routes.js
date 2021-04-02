@@ -62,7 +62,31 @@ router.get('/edit-post/:id', (req,res) => {
         res.status(400).json(err);
     });
 });
-
+router.get('/:id', (req,res) => {
+    if(Number(req.params.id) === Number(req.session.user_id)) {
+        res.redirect('/profile/user');
+    }
+    Post.findAll({
+        where: {
+            user_id: req.params.id
+        },
+        include: [
+            {
+                model: User,
+                attributes: ['username', 'email']
+            }
+        ]
+    }).then(data => {
+        const posts = data.map(post => post.get({ plain: true }));
+        res.render('homepage', {
+            posts,
+            loggedIn: req.session.loggedIn
+        })
+    }).catch(err => {
+        console.log(err);
+        res.status(404).json(err);
+    })
+});
 
 
 module.exports = router;
