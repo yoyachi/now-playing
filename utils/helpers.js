@@ -1,3 +1,6 @@
+const session = require("express-session");
+
+
 module.exports = {
     format_date: date => {
         return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(
@@ -10,5 +13,10 @@ module.exports = {
         }
     
         return word;
+    },
+    trash_button: (loggedIn) => {
+      if(loggedIn) {
+        return `fas fa-trash`
+      }
     }
 }

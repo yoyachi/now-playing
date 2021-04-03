@@ -12,7 +12,7 @@
 </form>
 {{/if}}
 
-{{> comments posts.comments}}
+{{> comments comments=posts.comments loggedIn=loggedIn}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>

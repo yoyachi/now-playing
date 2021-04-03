@@ -64,17 +64,26 @@ router.get('/post/:id', (req,res) => {
                 include: [
                     {
                         model: User,
-                        attributes: ['username']
+                        attributes: ['username', 'id']
                     }
                 ]
             }
         ]
     }).then(data => {
         const posts = data.get({ plain: true });
+        posts.comments.map(comment => {
+            if(comment.user_id === req.session.user_id) {
+                comment.loggedIn = true;
+                return;
+            }
+            comment.loggedIn = false;
+        });
+        console.log(posts.comments);
         res.render('single-post', {
             posts,
-            user_id: req.session.user_id,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            
+            
         });
     }).catch(err => {
         console.log(err);
