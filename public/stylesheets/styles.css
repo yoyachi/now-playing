@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 
-main {
+.animate {
     width: 100%;
     height: 100vh;
     color: #fff;
     background: linear-gradient(-45deg,#EE7752, #E73c7E, #23A6D5, #23D5AB);
     background-size: 400% 400%;
     position: relative;
-    animation: change 10s ease-in-out infinite;
+    animation: change 20s ease-in-out infinite;
 }
 
 #album-photo {
@@ -27,6 +27,14 @@ main {
     margin: 15px 0 0 0;
 }
 
+/* Utilities */
+.form-space{
+    padding: 20px;
+    margin-top: 30px;
+    /* border: 4px solid; */
+    border-radius: 10%;
+}
+
 @keyframes change {
     0% {
         background-position: 0 50%;
@@ -38,3 +46,5 @@ main {
         background-position: 0 50%;
     }
 }
+
+/* #EE7752, #E73c7E, #23A6D5, #23D5AB */
