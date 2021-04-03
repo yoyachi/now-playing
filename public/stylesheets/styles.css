@@ -11,7 +11,7 @@
     background: linear-gradient(-45deg,#EE7752, #E73c7E, #23A6D5, #23D5AB);
     background-size: 400% 400%;
     position: relative;
-    animation: change 10s ease-in-out infinite;
+    animation: change 20s ease-in-out infinite;
 }
 
 #album-photo {
