@@ -1,15 +1,29 @@
-<article class="post">
-    <div class="title">
-    <a href="/post/{{id}}" target="_blank">{{album_title}}</a>
-    <h3>by <a href="/profile/{{user_id}}">{{user.username}}</a> on {{format_date createdAt}}</h3>
+<div class="post card">
+    <div class="title card-title">
+    {{!-- <a href="/post/{{id}}" target="_blank">{{album_title}}</a> --}}
+    {{!-- <span> --}}
+    <a class="username" href="/profile/{{user_id}}">{{user.username}}</a> 
+        <span class="createdAt">
+        {{format_date createdAt}}
+        </span>
+    {{!-- </span> --}}
     </div>
-    <div class="post-text">
-        <img src="{{photo_url}}" alt="Album Photo" id="album-photo">
-        <p>Artist: {{artist}}</p>
-        <p>Album Title: {{album_title}}</p>
-        <p>Genre: {{genre}}</p>
+    <div class="post-text card-body container">
+        <div class="row">
+            <div class= "col-sm album-photo">
+                <img src="{{photo_url}}" alt="Album Photo" id="album-photo">
+            </div>
+            <div class= "col-sm">
+                <p>Artist: {{artist}}</p>
+                <p>Album Title: {{album_title}}</p>
+                <p>Genre: {{genre}}</p>
+                <p>Format: Vinyl</p>
+                <p><span class= "description">This is just a filler description but I gotta say whatever album this is totally changed my life! Its great on a rainy day.</span></p>
+                <a href="/post/{{id}}">({{comments.length}} {{format_plural "comment" comments.length}})</a>
+            </div>
+        </div>     
     </div>
-        <div class="meta">
+    {{!-- <div class="meta">
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
-</article>
+    </div> --}}
+</div>
