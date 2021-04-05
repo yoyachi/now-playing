@@ -1,0 +1,65 @@
+<section>
+  <h2>Edit post!</h2>
+
+  <div class="container">
+    <div class="row">
+      <form class="add-post-form">
+          <div>
+            <label for="post-artist">Artist:</label>
+            <input type="text" id="post-artist" class="form-control" name="post-artist" value="{{post.artist}}"/>
+          </div>
+          <div>
+            <label for="post-album">Album Title:</label>
+            <input type="text" id="post-album" class="form-control" name="post-album" value="{{post.album_title}}"/>
+          </div>
+          <div>
+            <label for="post-genre">Genre</label>
+            <select type="text" id="post-genre" name="post-genre">
+                  <option value="Rock">Rock</option>
+                  <option value="Electronic">Electronic</option>
+                  <option value="Pop">Pop</option>
+                  <option value="Funk-Soul">Funk/Soul</option>
+                  <option value="Jazz">Jazz</option>
+                  <option value="Folk">Folk</option>
+                  <option value="World">World</option>
+                  <option value="Country">Country</option>
+                  <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
+                  <option value="Classical">Classical</option>
+                  <option value="Musicals">Musicals</option>
+                  <option value="Reggae">Reggae</option>
+                  <option value="Latin">Latin</option>
+                  <option value="Blues">Blues</option>
+                  <option value="Comedy">Comedy</option>
+            </select>     
+          </div>
+          <div>
+            <label for="post-year">Year</label>
+            <input type="text" id="post-year" name="post-year" value="{{post.year}}" placeholder="(optional)" />
+          </div>
+          <div>
+            <label for="post-format">Format</label>
+            <select type="text" id="post-format" name="post-format">
+                  <option value="Vinyl">Vinyl</option>
+                  <option value="CD">CD</option>
+                  <option value="Tape">Tape</option>
+                  <option value="Streaming">Streaming</option>
+            </select>     
+          </div>
+          <div>
+            <label for="post-photo">Photo URL</label>
+            <input type="text" id="post-photo" name="post-photo" value="{{post.photo_url}}"/>
+          </div>
+          <div>
+            <label for="post-description">Description</label>
+            <textarea id="post-description" name="post-description" placeholder="(1-140 characters)" cols="30" rows="1" maxlength="140">{{post.description}}</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button id="delete-btn" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+  </div>
+
+</section>
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>

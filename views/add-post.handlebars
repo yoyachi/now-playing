@@ -1,4 +1,4 @@
-<section>
+<section class="add-post-section">
   <h2>What are you listening to now?</h2>
 
  <form class="add-post-form">
@@ -10,7 +10,7 @@
       <label for="post-album">Album Title</label>
       <input type="text" id="post-album" name="post-album" />
     </div>
-     <div>
+    <div>
       <label for="post-genre">Genre</label>
       <select type="text" id="post-genre" name="post-genre">
             <option value="Rock">Rock</option>
@@ -31,8 +31,25 @@
       </select>     
     </div>
     <div>
-      <label for="post-photo">Photo</label>
+      <label for="post-year">Year</label>
+      <input type="text" id="post-year" name="post-year" placeholder="(optional)" />
+    </div>
+    <div>
+      <label for="post-format">Format</label>
+      <select type="text" id="post-format" name="post-format">
+            <option value="Vinyl">Vinyl</option>
+            <option value="CD">CD</option>
+            <option value="Tape">Tape</option>
+            <option value="Streaming">Streaming</option>
+      </select>     
+    </div>
+    <div>
+      <label for="post-photo">Photo URL</label>
       <input type="text" id="post-photo" name="post-photo" />
+    </div>
+    <div>
+      <label for="post-description">Description</label>
+      <textarea id="post-description" name="post-description" placeholder="(1-140 characters)" cols="30" rows="1" maxlength="140"></textarea>
     </div>
     <button type="submit" class="btn">Create</button>
   </form>

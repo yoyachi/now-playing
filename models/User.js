@@ -36,6 +36,14 @@ User.init(
         validate: {
           len: [4]
         }
+      },
+      location: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      bio: {
+        type: DataTypes.STRING,
+        allowNull: true,
       }
     },
     {

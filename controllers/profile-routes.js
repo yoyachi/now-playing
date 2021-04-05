@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 // homepage
 router.get('/user', (req,res) => {
@@ -14,8 +14,18 @@ router.get('/user', (req,res) => {
         },
         include: [
             {
+                model: Comment,
+                attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username']
+                    }
+                ]
+            },
+            {
                 model: User,
-                attributes: ['username', 'email']
+                attributes: ['username', 'location', 'bio']
             }
         ]
     }).then(data => {
@@ -23,8 +33,12 @@ router.get('/user', (req,res) => {
         res.render('profile', {
             posts,
             loggedIn: true,
-            username: req.session.username,
-            email: req.session.email
+            user: {
+                username: req.session.username,
+                location: req.session.location,
+                email: req.session.email,
+                bio: req.session.bio
+            }
         });
     }).catch(err => {
         console.log(err);
@@ -53,13 +67,50 @@ router.get('/edit-post/:id', (req,res) => {
         }
     }).then(data => {
         const post = data.get({ plain: true });
-        res.json(post);
+        res.render('edit-post', {
+            post,
+            loggedIn: true
+        });
     }).catch(err => {
         console.log(err);
         res.status(400).json(err);
     });
 });
-
+router.get('/:id', (req,res) => {
+    if(Number(req.params.id) === Number(req.session.user_id)) {
+        res.redirect('/profile/user');
+    }
+    Post.findAll({
+        where: {
+            user_id: req.params.id
+        },
+        include: [
+            {
+                model: Comment,
+                attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username']
+                    }
+                ]
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    }).then(data => {
+        const posts = data.map(post => post.get({ plain: true }));
+        res.render('homepage', {
+            posts,
+            loggedIn: req.session.loggedIn
+        })
+    }).catch(err => {
+        console.log(err);
+        res.status(404).json(err);
+    })
+});
 
 
 module.exports = router;

@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.animate {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg,#EE7752, #E73c7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 20s ease-in-out infinite;
+}
+
+.header-row {
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.header-img {
+    width: 80%;
+}
+
+#album-photo {
+    width: 320px;
+    height: 320px;
+}
+
+.btn {
+    margin: 15px 0 5px 0;
+}
+
+.select {
+    margin: 15px 0 0 0;
+}
+
+.card-body {
+    margin: 0;
+    padding: 5px 20px;
+    justify-content: left;
+}
+
+.card-body p {
+    margin: 0;
+}
+
+.card-title {
+    margin: 0 20px;
+    font-size: 20px;
+    max-width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.album-photo, .profile-col-1 {
+    -ms-flex: 0 0 320px;
+    flex: 0 0 320px;
+} 
+
+.description {
+    font-style: italic;
+}
+
+.comments, .comment-form {
+    margin: 2px 20px;
+}
+
+textarea {
+    padding: 2px;
+}
+
+.comment {
+    padding: 2px;
+}
+
+.comment:nth-child(odd) {
+    background-color: #e4e4e4;
+  }
+
+.comment .meta {
+    font-size: 90%;
+    margin-bottom: 0;
+    opacity: .6;
+}
+
+.createdAt {
+    font-size: 70%;
+    margin-bottom: 0;
+    text-align: right;
+    opacity: .6;
+}
+
+.profile-info {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.add-post-link {
+    margin-left: 20px;
+}
+
+.edit-link {
+    margin-left: 20px;
+}
+
+.add-post-section {
+    margin-left: 20px;
+}
+
+/* Utilities */
+.form-space{
+    padding: 10px;
+    margin-top: 10px;
+    /* border: 4px solid; */
+    border-radius: 10%;
+}
+
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* #EE7752, #E73c7E, #23A6D5, #23D5AB */

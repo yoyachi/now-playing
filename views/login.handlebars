@@ -1,16 +1,29 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
+<section class="animate">
+  <div class="container">
+    <div class="row header-row">
+      {{!-- <h1 class="nowplaying">NOW PLAYING</h1> --}}
+      <img src="output-onlinepngtools.png" alt="now playing" class="header-img">
+    </div>
+    <div class="row">
+       <div class="col-sm-3"></div>
+       <div class="col-sm-6 form-space">
+        <form class="login-form">
+          <div>
+            <label for="email-login">Email address:</label>
+            <input type="text" id="email-login" class="form-control" placeholder="name@example.com" />
+          </div>
+          <div>
+            <label for="password-login"> Password:</label>
+            <input type="password" class="form-control"  id="password-login" />
+          </div>
+          <div>
+            <button class="btn btn-primary" type="submit">Login</button>
+          </div>
+          <a class="login-link" href="/signup">Sign up instead</a>
+        </form>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
   </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-<a class="login-link" href="/signup">Sign up instead</a>
-</form>
-
+</section>
 <script src="/javascript/login.js"></script>
