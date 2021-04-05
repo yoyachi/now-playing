@@ -4,6 +4,10 @@ const { User, Post, Comment } = require('../models');
 
 // homepage
 router.get('/', (req,res) => {
+    if(!req.session.loggedIn) {
+        res.redirect('/login');
+        return;
+    }
     Post.findAll({
         include: [
             {

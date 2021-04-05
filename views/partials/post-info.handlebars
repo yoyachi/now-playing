@@ -17,8 +17,9 @@
                 <p>Artist: {{artist}}</p>
                 <p>Album Title: {{album_title}}</p>
                 <p>Genre: {{genre}}</p>
-                <p>Format: Vinyl</p>
-                <p><span class= "description">This is just a filler description but I gotta say whatever album this is totally changed my life! Its great on a rainy day.</span></p>
+                <p>Year: {{year}}</p>
+                <p>Format: {{format}}</p>
+                <p><span class= "description">{{description}}</span></p>
                 <a href="/post/{{id}}">({{comments.length}} {{format_plural "comment" comments.length}})</a>
                 {{!-- {{#if loggedIn}}
                 <a href="/profile/edit-post/{{post.id}}" class="edit-link">Edit Post</a>

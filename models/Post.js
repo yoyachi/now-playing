@@ -16,7 +16,7 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false
       }, 
-	album_title: {
+	  album_title: {
         type: DataTypes.STRING,
         allowNull: false
       },
@@ -24,10 +24,25 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-	photo_url: {
+    year: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    format: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+	  photo_url: {
         type: DataTypes.STRING,
         allowNull: true,
       },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 140]
+      }
+    },
     user_id: {
         type: DataTypes.INTEGER,
         references: {

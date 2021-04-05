@@ -59,7 +59,10 @@ router.post('/', (req,res) => {
         artist: req.body.artist,
         album_title: req.body.album_title,
         genre: req.body.genre,
+        year: req.body.year,
+        format: req.body.format,
         photo_url: req.body.photo_url,
+        description: req.body.description,
         user_id: req.session.user_id
     }).then(data => res.json(data)).catch(err => {
         console.log(err);

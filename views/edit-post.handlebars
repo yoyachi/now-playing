@@ -12,8 +12,8 @@
             <label for="post-album">Album Title:</label>
             <input type="text" id="post-album" class="form-control" name="post-album" value="{{post.album_title}}"/>
           </div>
-          <div class="select">
-            <label for="post-genre">Genre:</label>
+          <div>
+            <label for="post-genre">Genre</label>
             <select type="text" id="post-genre" name="post-genre">
                   <option value="Rock">Rock</option>
                   <option value="Electronic">Electronic</option>
@@ -33,8 +33,25 @@
             </select>     
           </div>
           <div>
-            <label for="post-photo">Photo:</label>
-            <input type="text" id="post-photo"  class="form-control" name="post-photo" value="{{post.photo_url}}"/>
+            <label for="post-year">Year</label>
+            <input type="text" id="post-year" name="post-year" value="{{post.year}}" placeholder="(optional)" />
+          </div>
+          <div>
+            <label for="post-format">Format</label>
+            <select type="text" id="post-format" name="post-format">
+                  <option value="Vinyl">Vinyl</option>
+                  <option value="CD">CD</option>
+                  <option value="Tape">Tape</option>
+                  <option value="Streaming">Streaming</option>
+            </select>     
+          </div>
+          <div>
+            <label for="post-photo">Photo URL</label>
+            <input type="text" id="post-photo" name="post-photo" value="{{post.photo_url}}"/>
+          </div>
+          <div>
+            <label for="post-description">Description</label>
+            <textarea id="post-description" name="post-description" placeholder="(1-140 characters)" cols="30" rows="1" maxlength="140">{{post.description}}</textarea>
           </div>
           <button type="submit" class="btn btn-primary">Save</button>
           <button id="delete-btn" class="btn btn-primary">Delete</button>
