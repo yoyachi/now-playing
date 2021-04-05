@@ -14,10 +14,9 @@
                 <img src="{{photo_url}}" alt="Album Photo" id="album-photo">
             </div>
             <div class= "col-sm">
-                <p>Artist: {{artist}}</p>
-                <p>Album Title: {{album_title}}</p>
+                <p>{{artist}} - {{album_title}} ({{year}}) </p>
+                {{!-- <p>Genre: {{genre}} | Format: {{format}}</p> --}}
                 <p>Genre: {{genre}}</p>
-                <p>Year: {{year}}</p>
                 <p>Format: {{format}}</p>
                 <p><span class= "description">{{description}}</span></p>
                 <a href="/post/{{id}}">({{comments.length}} {{format_plural "comment" comments.length}})</a>
