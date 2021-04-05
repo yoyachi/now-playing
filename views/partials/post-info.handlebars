@@ -1,5 +1,12 @@
 <article class="post">
     <div class="title">
-    <a href="#">{{album_title}}</a>
+    <a href="/post/{{id}}" target="_blank">{{album_title}}</a>
+    <span>by {{user.username}} on {{created_at}}</span>
+    </div>
+    <div class="post-text">
+        <img src="{{photo_url}}" alt="Album Photo">
+        <p>Artist: {{artist}}</p>
+        <p>Album Title: {{album_title}}</p>
+        <p>Genre: {{genre}}</p>
     </div>
 </article>

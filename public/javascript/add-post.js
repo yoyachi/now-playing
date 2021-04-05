@@ -1,18 +1,19 @@
 async function newFormHandler(event) {
     event.preventDefault();
-  
-    const artist = document.querySelector('input[name="post-artist"]').value;
-    const album_title = document.querySelector('input[name="post-album"]').value;
-    const genre = document.querySelector('input[name="post-genre"]').value;
-    const photo_url = document.querySelector('input[name="post-photo"]').value;
+
+    console.log('hello');
+    const artist = document.querySelector('#post-artist').value;
+    const album_title = document.querySelector('#post-album').value;
+    const genre = document.querySelector('#post-genre').value;
+    const photo_url = document.querySelector('#post-photo').value;
 
     const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({
-        artist: artist,
-        album_title: album_title,
-        genre: genre,
-        photo_url: photo_url
+        artist,
+        album_title,
+        genre,
+        photo_url
       }),
       headers: {
         'Content-Type': 'application/json'
