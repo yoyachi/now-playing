@@ -59,6 +59,8 @@ router.post('/login', (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.email = dbUserData.email;
+        req.session.location = dbUserData.location;
+        req.session.bio = dbUserData.bio;
         req.session.loggedIn = true;
   
         res.json({ user: dbUserData, message: 'You are now logged in!' });
@@ -103,7 +105,12 @@ router.put('/:id', (req,res) => {
             res.status(404).json({ message: 'No user found with this id' });
             return;
           }
-          res.json(data);
+
+          req.session.save(() => {
+            req.session.bio = req.body.bio;
+      
+            res.json({ user: data, message: 'Y' });
+          });
     })
 });
 // delete user
