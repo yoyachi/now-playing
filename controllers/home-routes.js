@@ -22,7 +22,7 @@ router.get('/', (req,res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['id', 'username', 'email', 'bio']
             }
         ],
         order: [['created_at', 'DESC']],
