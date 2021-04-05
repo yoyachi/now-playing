@@ -12,7 +12,9 @@
         {{user.bio}}
         </p>
         {{else}}
+        {{#unless loggedIn}}
         <button class='btn btn-primary' id="add-bio">Add a bio!</button>
+        {{/unless}}
         {{/if}}
     </div>
   </div>
@@ -26,13 +28,16 @@
     {{#each posts as |post|}}
     <li class="post-info">
       {{> post-info post}}
-      <a href="/profile/edit-post/{{post.id}}" class="edit-link">Edit Post</a>
     </li>
     {{/each}}
   </ul>
 </section>
+{{else}}
+<h2 class='text-white'>No posts!</h2>
 {{/if}}
 
+{{#if user_profile}}
 <a class="add-post-link" href="/profile/post"> + New Post</a>
+{{/if}}
 
 <script src="/javascript/add-bio.js"></script>

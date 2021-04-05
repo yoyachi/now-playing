@@ -26,11 +26,12 @@ router.get('/user', (req,res) => {
             },
             {
                 model: User,
-                attributes: ['username', 'location', 'bio']
+                attributes: ['id', 'username', 'location', 'bio']
             }
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
+        posts.map(post => post.loggedIn = true);
         res.render('profile', {
             posts,
             loggedIn: true,
@@ -40,7 +41,7 @@ router.get('/user', (req,res) => {
                 email: req.session.email,
                 bio: req.session.bio,
                 user_id: req.session.user_id
-            }
+            },
         });
     }).catch(err => {
         console.log(err);
@@ -83,19 +84,29 @@ router.get('/:id', (req,res) => {
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
-        let user = posts[0].user;
-        console.log(user);
-        res.render('profile', {
-            posts,
-            loggedIn: req.session.loggedIn,
-            user: {
-                username: user.username,
-                location: user.location,
-                email: user.email,
-                bio: user.bio,
-                user_id: user.id
-            }
-        })
+        let userStuff;
+        if(posts.length === 0) {
+            User.findOne({
+                where: {
+                    id: req.params.id
+                }
+            }).then(data => {
+                userStuff = data.get({ plain: true });
+                res.render('profile', {
+                    loggedIn: req.session.loggedIn,
+                    user: userStuff,
+                    user_profile: false
+                })
+            })
+        } else {
+            userStuff = posts[0].user;
+            res.render('profile', {
+                posts,
+                loggedIn: req.session.loggedIn,
+                user: userStuff
+            })
+        }
+        
     }).catch(err => {
         console.log(err);
         res.status(404).json(err);
