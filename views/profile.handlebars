@@ -1,11 +1,21 @@
-<section>
-    <h2>Username: {{username}}</h2>
-    <h2>Email: {{email}}</h2>
+<section class="profile-info container">
+  <div class="row">
+    <div class="col profile-col-1">
+      <h4>{{username}}</h4>
+      <h6>Email: {{email}}</h6>
+      <h6>Location: Austin, TX</h6> 
+    </div>
+    <div class = "col">
+      <h6>About Me:</h6>
+      <p name="about-me" id="" cols="60" rows="2"></p>
+    </div>
+  </div>
+    
 </section>
 
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  {{!-- <h2>Your Posts</h2> --}}
   <ul>
     {{#each posts as |post|}}
     <li class="post-info">
