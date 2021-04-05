@@ -60,7 +60,7 @@ router.get('/post/:id', (req,res) => {
             },
             {
                 model: Comment,
-                attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
                 include: [
                     {
                         model: User,
@@ -78,7 +78,6 @@ router.get('/post/:id', (req,res) => {
             }
             comment.loggedIn = false;
         });
-        console.log(posts.comments);
         res.render('single-post', {
             posts,
             loggedIn: req.session.loggedIn,

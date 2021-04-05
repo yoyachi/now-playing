@@ -7,8 +7,9 @@
     </div>
     <div class="text">
       {{comment_text}}
-      <i class="{{trash_button loggedIn}}"></i>
-      
+      {{#if loggedIn}}
+      <button onclick="deleteComment()" type="button" class="btn" id="{{id}}"><i class="fas fa-trash" id="{{id}}"></i></button>
+      {{/if}}
     </div>
   </section>
   {{/each}}

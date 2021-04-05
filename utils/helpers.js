@@ -13,10 +13,5 @@ module.exports = {
         }
     
         return word;
-    },
-    trash_button: (loggedIn) => {
-      if(loggedIn) {
-        return `fas fa-trash`
-      }
     }
 }
