@@ -37,7 +37,8 @@ router.get('/user', (req,res) => {
                 username: req.session.username,
                 location: req.session.location,
                 email: req.session.email,
-                bio: req.session.bio
+                bio: req.session.bio,
+                user_id: req.session.user_id
             }
         });
     }).catch(err => {
