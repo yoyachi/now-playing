@@ -4,21 +4,20 @@ async function editFormHandler(event) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length-1
     ];
-
     const username = document.querySelector('#profile-username').value;
     const email = document.querySelector('#profile-email').value;
     const location = document.querySelector('#profile-location').value;
     const bio = document.querySelector('#profile-bio').value;
-
-    const response = await fetch(`/api/user/${id}`, {
+    console.log(id, username, email, location, bio);
+    const response = await fetch(`/api/users/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             username,
             email,
             location,
             bio
-          }),
-          headers: {
+            }),
+            headers: {
             'Content-Type': 'application/json'
         }
     });
@@ -28,7 +27,7 @@ async function editFormHandler(event) {
     } else {
         alert(response.statusText);
     }
-  
-  }
-  
-  document.querySelector('.edit-profile-form').addEventListener('submit', editFormHandler);
+
+    }
+
+document.querySelector('.edit-profile-form').addEventListener('submit', editFormHandler);

@@ -102,6 +102,7 @@ router.get('/:id', (req,res) => {
                     user_profile: false
                 })
             })
+            return;
         } else {
             userStuff = posts[0].user;
             res.render('profile', {
@@ -145,15 +146,14 @@ router.get('/edit-profile/:id', (req,res) => {
         res.redirect('/login');
         return;
     }
-    Post.findOne({
+    User.findOne({
         where: {
-            user_id: req.session.user_id,
-            id: req.params.id
+            id: req.session.user_id,
         }
     }).then(data => {
-        const post = data.get({ plain: true });
+        const user = data.get({ plain: true });
         res.render('edit-profile', {
-            post,
+            user,
             loggedIn: true
         });
     }).catch(err => {
