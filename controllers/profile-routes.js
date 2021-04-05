@@ -116,7 +116,7 @@ router.get('/:id', (req,res) => {
         res.status(404).json(err);
     })
 });
-// edit users information
+// edit users post
 router.get('/edit-post/:id', (req,res) => {
     if(!req.session.loggedIn) {
         res.redirect('/login');
@@ -130,6 +130,29 @@ router.get('/edit-post/:id', (req,res) => {
     }).then(data => {
         const post = data.get({ plain: true });
         res.render('edit-post', {
+            post,
+            loggedIn: true
+        });
+    }).catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+    });
+});
+
+// edit users profile
+router.get('/edit-profile/:id', (req,res) => {
+    if(!req.session.loggedIn) {
+        res.redirect('/login');
+        return;
+    }
+    Post.findOne({
+        where: {
+            user_id: req.session.user_id,
+            id: req.params.id
+        }
+    }).then(data => {
+        const post = data.get({ plain: true });
+        res.render('edit-profile', {
             post,
             loggedIn: true
         });

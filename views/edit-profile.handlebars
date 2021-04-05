@@ -1,0 +1,30 @@
+<section>
+  <h2>Edit profile:</h2>
+
+  <div class="container">
+    <div class="row">
+      <form class="edit-profile-form">
+          <div>
+            <label for="profile-username">Username</label>
+            <input type="text" id="profile-username" class="form-control" name="profile-username" value="{{user.username}}"/>
+          </div>
+          <div>
+            <label for="profile-email">Email</label>
+            <input type="text" id="profile-email" class="form-control" name="profile-email" value="{{user.email}}"/>
+          </div>
+          <div>
+            <label for="profile-Location">Location</label>
+            <input type="text" id="profile-Location" class="form-control" name="profile-Location" value="{{user.location}}"/>
+          </div>
+          <div>
+            <label for="profile-bio">Description</label>
+            <textarea id="profile-bio" name="profile-bio" cols="30" rows="1" maxlength="140">{{user.bio}}</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button id="delete-btn" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+  </div>
+</section>
+
+<script src="/javascript/edit-profile.js"></script>

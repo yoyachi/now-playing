@@ -17,8 +17,12 @@
         <button class='btn btn-primary' id="add-bio">Add a bio!</button>
         {{/unless}}
         {{/if}}
+        {{#if loggedIn}}
+        <a href="edit-profile/{{user.id}}" class="edit-link">Edit Profile</a>
+        {{/if}}
     </div>
   </div>
+  
     
 </section>
 
