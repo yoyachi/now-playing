@@ -25,7 +25,7 @@ router.get('/user', (req,res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'location', 'bio']
             }
         ]
     }).then(data => {
@@ -33,8 +33,12 @@ router.get('/user', (req,res) => {
         res.render('profile', {
             posts,
             loggedIn: true,
-            username: req.session.username,
-            email: req.session.email
+            user: {
+                username: req.session.username,
+                location: req.session.location,
+                email: req.session.email,
+                bio: req.session.bio
+            }
         });
     }).catch(err => {
         console.log(err);

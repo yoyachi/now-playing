@@ -18,12 +18,16 @@ router.post('/', (req,res) => {
     User.create({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        location: req.body.location,
+        bio: req.body.bio
     }).then(data => {
         req.session.save(() => {
           req.session.user_id = data.id;
           req.session.username = data.username;
           req.session.email = data.email;
+          req.session.location = data.location;
+          req.session.bio = data.bio;
           req.session.loggedIn = true;
     
           res.json({ user: data, message: 'You are now logged in!' });
