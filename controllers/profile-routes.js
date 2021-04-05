@@ -31,7 +31,10 @@ router.get('/user', (req,res) => {
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
-        posts.map(post => post.loggedIn = true);
+        posts.map(post => {
+            post.loggedIn = true;
+        });
+        let userProfile = true;
         res.render('profile', {
             posts,
             loggedIn: true,
@@ -42,6 +45,7 @@ router.get('/user', (req,res) => {
                 bio: req.session.bio,
                 user_id: req.session.user_id
             },
+            user_profile: userProfile
         });
     }).catch(err => {
         console.log(err);
