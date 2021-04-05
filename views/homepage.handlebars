@@ -1,3 +1,26 @@
+    <form id="genre-form">
+      <label for="post-genre">Genre</label>
+      <select type="text" id="post-genre" name="post-genre">
+            <option value="Rock">Rock</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Pop">Pop</option>
+            <option value="Funk-Soul">Funk/Soul</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Folk">Folk</option>
+            <option value="World">World</option>
+            <option value="Country">Country</option>
+            <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
+            <option value="Classical">Classical</option>
+            <option value="Musicals">Musicals</option>
+            <option value="Reggae">Reggae</option>
+            <option value="Latin">Latin</option>
+            <option value="Blues">Blues</option>
+            <option value="Comedy">Comedy</option>
+      </select>   
+         <button type="submit" id="filter-genre">Submit</button>
+    </form>
+   
+
 <ul class="post-list">
   {{#each posts as |post|}}
   <li>
@@ -5,3 +28,5 @@
   </li>
   {{/each}}
 </ul>
+
+<script src="/javascript/filterGenre.js"></script>
