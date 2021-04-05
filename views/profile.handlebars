@@ -1,11 +1,11 @@
 <section class="profile-info container">
   <div class="row">
-    <div class="col profile-col-1">
+    <div class="col profile-col-1 text-white">
       <h4 class="userIdAccess" id='{{user.user_id}}'>{{user.username}}</h4>
       <h6>Email: {{user.email}}</h6>
       <h6>Location: {{user.location}}</h6> 
     </div>
-    <div class = "col" id="bioInfo">
+    <div class = "col text-white" id="bioInfo">
         {{#if user.bio}}
         <h6>Bio:</h6>
         <p name="bio" id="" cols="60" rows="2"></p>

@@ -24,7 +24,8 @@ router.get('/', (req,res) => {
                 model: User,
                 attributes: ['username']
             }
-        ]
+        ],
+        order: [['created_at', 'DESC']],
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
         res.render('homepage', {
@@ -50,6 +51,36 @@ router.get('/login', (req,res) => {
 // singup page
 router.get('/signup', (req,res) => {
     res.render("signup");
+});
+router.get('/:genre', (req,res) => {
+    Post.findAll({
+        where: {
+            genre: req.params.genre
+        },
+        order: [['created_at', 'DESC']],
+        include: [
+            {
+                model: Comment,
+                attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username']
+                    }
+                ]
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    }).then(data => {
+        const posts = data.map(post => post.get({ plain: true }));
+        res.render('homepage', {
+            posts,
+            loggedIn: req.session.user_id
+        })
+    })
 });
 // single post
 router.get('/post/:id', (req,res) => {

@@ -12,6 +12,7 @@ router.get('/user', (req,res) => {
         where: {
             user_id: req.session.user_id
         },
+        order: [['created_at', 'DESC']],
         include: [
             {
                 model: Comment,
@@ -85,6 +86,7 @@ router.get('/:id', (req,res) => {
         where: {
             user_id: req.params.id
         },
+        order: [['created_at', 'DESC']],
         include: [
             {
                 model: Comment,
