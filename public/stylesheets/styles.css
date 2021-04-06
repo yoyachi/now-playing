@@ -12,6 +12,10 @@ body {
     position: relative;
     animation: change 20s ease-in-out infinite;
 }
+
+nav {
+    background-image: linear-gradient(45deg, #222222 0%, #010000 100%);
+}
 form{
     margin-left: 20px;
     margin-top: 20px;
@@ -65,7 +69,7 @@ a:hover {
 }
 
 .btn {
-    margin: 15px 0 5px 0;
+    margin: 15px 5px 5px 5px;
 }
 
 .select {
@@ -74,6 +78,7 @@ a:hover {
 
 .post-list {
     align-content: center;
+    /* display: flex; */
 }
 
 .card {
@@ -117,10 +122,18 @@ a:hover {
 
 .comments, .comment-form {
     margin: 2px 20px;
+    max-width: 400px;
 }
 
-textarea {
+#comment-container {
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#textarea {
     padding: 2px;
+    color: whitesmoke;
+    border: solid 1px whitesmoke;
 }
 
 .comment {
@@ -128,7 +141,7 @@ textarea {
 }
 
 .comment:nth-child(odd) {
-    background-color: #e4e4e4;
+    background-color: #b9bafa0d;
   }
 
 .comment .meta {

@@ -1,21 +1,21 @@
 <section class="animate-feed">
 <section class="profile-info container">
   <div class="row">
-      <div class= "col">
+      <div class= "col-4">
         <h4 class="userIdAccess" id='{{user.user_id}}'>{{user.username}}</h4>
       </div>
-      <div class= "col">
+      <div class= "col-8">
         {{#if user_profile}}
         <a href="/profile/edit-profile/{{user.user_id}}">Edit Profile</a>
         {{/if}}
       </div>
   </div>
   <div class="row">
-    <div class="col profile-col-1 text-white">
+    <div class="col-4 profile-col-1 text-white">
       <h6>Email: {{user.email}}</h6>
       <h6>Location: {{user.location}}</h6> 
     </div>
-    <div class = "col text-white" id="bioInfo">
+    <div class = "col-8 text-white" id="bioInfo">
         {{#if user.bio}}
         <h6>Bio: <i>{{user.bio}}</i></h6>
         </p>

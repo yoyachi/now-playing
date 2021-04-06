@@ -1,20 +1,22 @@
 {{> post-info posts }}
 
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body" cols="38"></textarea>
-  </div>
+<div class= "comment-container" id="comment-container">
+    {{#if loggedIn}}
+    <form class="comment-form">
+      <div>
+        <textarea class= "form-control my-1 bg-transparent" id ="textarea"name="comment-body" cols="38"></textarea>
+      </div>
 
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-{{/if}}
+      <div>
+        <button class="btn btn-outline-light text-light" type="submit">Comment</button>
+      </div>
+    </form>
+    {{/if}}
 
-{{> comments comments=posts.comments loggedIn=loggedIn}}
+    {{> comments comments=posts.comments loggedIn=loggedIn}}
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-<script src="/javascript/delete-comment.js"></script>
-{{/if}}
+    {{#if loggedIn}}
+    <script src="/javascript/comment.js"></script>
+    <script src="/javascript/delete-comment.js"></script>
+    {{/if}}
+</div>
