@@ -1,8 +1,9 @@
 {{> post-info posts }}
 
-<div class= "comment-container" id="comment-container">
+<div class= "container comment-container" id="comment-container">
+  <div class="row comment-row">
     {{#if loggedIn}}
-    <form class="comment-form">
+    <form class="comment-form d-flex flex-column">
       <div>
         <textarea class= "form-control my-1 bg-transparent" id ="textarea"name="comment-body" cols="38"></textarea>
       </div>
@@ -12,8 +13,11 @@
       </div>
     </form>
     {{/if}}
+  </div>
 
+  <div class="row comment-row">
     {{> comments comments=posts.comments loggedIn=loggedIn}}
+  </div>
 
     {{#if loggedIn}}
     <script src="/javascript/comment.js"></script>

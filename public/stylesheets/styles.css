@@ -14,7 +14,7 @@ body {
 }
 
 nav {
-    background-image: linear-gradient(45deg, #222222 0%, #010000 100%);
+    background-image: linear-gradient(135deg, #272728 0%, #060606 100%);
 }
 form{
     margin-left: 20px;
@@ -66,10 +66,18 @@ a:hover {
 #album-photo {
     width: 320px;
     height: 320px;
+    padding-bottom: 5px;
 }
 
 .btn {
     margin: 15px 5px 5px 5px;
+}
+.btn-sm {
+    border: none;
+    transition: all .5s ease-out;
+}
+.btn-sm:hover {
+    background-color: #b9bafa80;
 }
 
 .select {
@@ -79,6 +87,7 @@ a:hover {
 .post-list {
     align-content: center;
     /* display: flex; */
+    padding-bottom: 5px;
 }
 
 .card {
@@ -122,10 +131,10 @@ a:hover {
 
 .comments, .comment-form {
     margin: 2px 20px;
-    max-width: 400px;
+    width: 400px;
 }
 
-#comment-container {
+.comment-row {
     justify-content: center;
     margin: 0 auto;
 }
