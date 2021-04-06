@@ -38,7 +38,7 @@ a:hover {
     width: 100%;
     height: 100vh;
     color: #fff;
-    background: linear-gradient(-45deg,#EE7752, #E73c7E, #23A6D5, #23D5AB);
+    background: linear-gradient(-45deg,#b9bafa, #883da9, #5c36d0, #2355d5, #1eb870);
     background-size: 400% 400%;
     position: relative;
     animation: change 20s ease-in-out infinite;
@@ -71,6 +71,7 @@ a:hover {
 
 .btn {
     margin: 15px 5px 5px 5px;
+    transition: all .5s ease-out;
 }
 .btn-sm {
     border: none;
