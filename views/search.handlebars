@@ -1,0 +1,21 @@
+<form id="search-form">
+    <label for="search">Search by: </label>
+    <select type="text" name="search" class="form-control-sm" id="search-for">
+        <option value="User">User</option>
+    </select>
+    <input type="text" class="form-control-sm" id="search-form-input" />
+    <button class='btn btn-primary' type="submit">Search</button>
+</form>
+
+
+<ul>
+{{#each users}}
+<li>
+    <a href='/profile/{{id}}'>{{username}}</a>
+</li>
+{{/each}}
+</ul>
+
+
+<script src='/javascript/search.js'></script>
+    

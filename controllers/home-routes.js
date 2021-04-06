@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
+const { Op } = require('sequelize');
 
 // homepage
 router.get('/', (req,res) => {
@@ -38,7 +39,33 @@ router.get('/', (req,res) => {
         res.status(404).json(err);
     });
 });
+//search
+router.get('/search', (req,res) => {
+    // console.log(req.query.input);
+    // res.render('search', {
+    //     loggedIn: req.session.loggedIn
+    // });
+    if (!req.query.input) {
+        res.render('search', {
+            loggedIn: req.session.loggedIn
+        }); 
+    }
 
+    User.findAll({
+        where: {
+            username: {
+                [Op.like]: '%' + req.query.input + '%'
+            }
+        }
+    }).then(data => {
+        const users = data.map(user => user.get({ plain: true }));
+        res.render('search', {
+            users,
+            loggedIn: req.session.loggedIn
+        });
+    }).catch(err => res.status(404).json(err));
+    
+});
 // profile page
 router.get('/profile', (req,res) => {
     res.render("profile");
@@ -53,6 +80,8 @@ router.get('/login', (req,res) => {
 router.get('/signup', (req,res) => {
     res.render("signup");
 });
+
+// look for posts based on genre
 router.get('/:genre', (req,res) => {
     Post.findAll({
         where: {
