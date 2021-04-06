@@ -3,7 +3,13 @@ async function filterGenre(event) {
 
     var genreVal = document.querySelector('#post-genre').value;
 
-    document.location.replace(`/${genreVal}`);
+    if (genreVal === "All") {
+        document.location.replace(`/`);
+    }
+
+    else {
+        document.location.replace(`/${genreVal}`);
+    }
 }
 
 document.querySelector('#filter-genre').addEventListener('click', filterGenre);
