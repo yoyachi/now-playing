@@ -2,11 +2,11 @@
 <section class="profile-info container">
   <div class="row">
       <div class= "col-4">
-        <h4 class="userIdAccess" id='{{user.user_id}}'>{{user.username}}</h4>
+        <h4 class="userIdAccess" id='{{user.id}}'>{{user.username}}</h4>
       </div>
       <div class= "col-8">
         {{#if user_profile}}
-        <a href="/profile/edit-profile/{{user.user_id}}">Edit Profile</a>
+        <a href="/profile/edit-profile/{{user.id}}">Edit Profile</a>
         {{/if}}
       </div>
   </div>

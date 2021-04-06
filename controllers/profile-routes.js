@@ -4,10 +4,12 @@ const { User, Post, Comment } = require('../models');
 
 // homepage
 router.get('/user', (req,res) => {
+    // if not logged in
     if(!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
+    // query to find all posts
     Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -26,27 +28,39 @@ router.get('/user', (req,res) => {
             },
             {
                 model: User,
-                attributes: ['id', 'username', 'location', 'bio']
+                attributes: ['id', 'username', 'location', 'bio', 'email']
             }
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
-        posts.map(post => {
-            post.loggedIn = true;
-        });
-        let userProfile = true;
-        res.render('profile', {
-            posts,
-            loggedIn: true,
-            user: {
-                username: req.session.username,
-                location: req.session.location,
-                email: req.session.email,
-                bio: req.session.bio,
-                user_id: req.session.user_id
-            },
-            user_profile: userProfile
-        });
+        // if there are no posts, query for a user instead
+        if (!posts[0]) {
+            User.findOne({
+                where: {
+                    id: req.session.user_id
+                }
+            }).then(data => {
+                const user = data.get({ plain: true });
+                res.render('profile', {
+                    posts,
+                    loggedIn: true,
+                    user,
+                    user_profile: true
+            });
+            })
+        // query successful so we can use the user data from posts
+        } else {
+            posts.map(post => {
+                post.loggedIn = true;
+            });
+            
+            res.render('profile', {
+                posts,
+                loggedIn: true,
+                user: posts[0].user,
+                user_profile: true
+            });
+        }
     }).catch(err => {
         console.log(err);
         res.status(404).json(err);
@@ -55,16 +69,22 @@ router.get('/user', (req,res) => {
 
 // page to create a post
 router.get('/post', (req,res) => {
+    // checks to see if logged in
     if(!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
-    res.render("add-post");
+    res.render("add-post", {
+        loggedIn: req.session.loggedIn
+    });
 });
+// page for viewing either users page, or another users page
 router.get('/:id', (req,res) => {
+    // if the user is trying to look at their own page, they will be redirected to /profile/user
     if(Number(req.params.id) === Number(req.session.user_id)) {
         res.redirect('/profile/user');
     }
+    // if the user is not redirected, a query is made to find all posts for the specified user
     Post.findAll({
         where: {
             user_id: req.params.id
@@ -89,7 +109,9 @@ router.get('/:id', (req,res) => {
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
         let userStuff;
+        // if the user has no posts query for a user instead of their posts
         if(posts.length === 0) {
+            // user query
             User.findOne({
                 where: {
                     id: req.params.id
@@ -101,8 +123,7 @@ router.get('/:id', (req,res) => {
                     user: userStuff,
                     user_profile: false
                 })
-            })
-            return;
+            }).catch(err => res.status(404).json(err));
         } else {
             userStuff = posts[0].user;
             res.render('profile', {
