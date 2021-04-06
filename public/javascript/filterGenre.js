@@ -6,4 +6,4 @@ async function filterGenre(event) {
     document.location.replace(`/${genreVal}`);
 }
 
-document.querySelector('#genre-form').addEventListener('submit', filterGenre);
+document.querySelector('#filter-genre').addEventListener('click', filterGenre);
