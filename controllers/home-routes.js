@@ -79,7 +79,8 @@ router.get('/:genre', (req,res) => {
         const posts = data.map(post => post.get({ plain: true }));
         res.render('homepage', {
             posts,
-            loggedIn: req.session.user_id
+            loggedIn: req.session.user_id,
+            homepage: true
         })
     })
 });
