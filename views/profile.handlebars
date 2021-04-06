@@ -5,7 +5,7 @@
         <h4 class="userIdAccess" id='{{user.user_id}}'>{{user.username}}</h4>
       </div>
       <div class= "col">
-        {{#if loggedIn}}
+        {{#if user_profile}}
         <a href="/profile/edit-profile/{{user.user_id}}">Edit Profile</a>
         {{/if}}
       </div>
