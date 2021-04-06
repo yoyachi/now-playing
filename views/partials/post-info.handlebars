@@ -9,11 +9,11 @@
     {{!-- </span> --}}
     </div>
     <div class="post-text card-body container">
-        <div class="row">
-            <div class= "col-sm album-photo">
+        <div class="col">
+            {{!-- <div class= "col-sm album-photo"> --}}
                 <img src="{{photo_url}}" alt="Album Photo" id="album-photo">
-            </div>
-            <div class= "col-sm">
+            {{!-- </div> --}}
+            {{!-- <div class= "col-sm"> --}}
                 <p>{{artist}} - {{album_title}} ({{year}}) </p>
                 {{!-- <p>Genre: {{genre}} | Format: {{format}}</p> --}}
                 <p>Genre: {{genre}}</p>
@@ -23,7 +23,7 @@
                 {{!-- {{#if loggedIn}}
                 <a href="/profile/edit-post/{{post.id}}" class="edit-link">Edit Post</a>
                 {{/if}} --}}
-            </div>
+            {{!-- </div> --}}
         </div>     
     </div>
     {{!-- <div class="meta">

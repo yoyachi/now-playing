@@ -9,12 +9,6 @@ form{
 }
 a {
   color: whitesmoke;
-  transition: all .5s ease-in-out;
-}
-a:hover{
-    color:#eebaf3;
-    opacity: 90%;
-    text-decoration: none;
 }
 .genre-label{
     color: whitesmoke;
@@ -31,7 +25,7 @@ a:hover{
 
 .animate-feed {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     color: #fff;
     background: linear-gradient(-45deg,#292b31, #000000);
     background-size: 400% 400%;
@@ -64,7 +58,7 @@ a:hover{
 #post-list {
     align-content: center;
     margin: 3% auto;
-    border: 1px solid #eebaf3;
+    border: 1px solid #b9bafa;
     border-radius: 10px;
     background-color: rgb(26, 25, 25);
 }
