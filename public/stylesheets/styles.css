@@ -9,6 +9,12 @@ form{
 }
 a {
   color: whitesmoke;
+  transition: all .5s ease-in-out;
+}
+a:hover{
+    color:#eebaf3;
+    opacity: 90%;
+    text-decoration: none;
 }
 .genre-label{
     color: whitesmoke;

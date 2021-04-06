@@ -35,6 +35,30 @@
         <a class="nav-link" href="/signup">Sign Up</a>
       </li>
       {{/if}}
+      {{#if homepage}}
+      <form class="form-inline my-2 my-lg-0" id="genre-form">
+        <label for="post-genre" class="genre-label pr-2">Genre</label>
+        <select type="text" id="post-genre" name="post-genre" class="form-control">
+              <option value="Blank"></option>
+              <option value="Rock">Rock</option>
+              <option value="Electronic">Electronic</option>
+              <option value="Pop">Pop</option>
+              <option value="Funk-Soul">Funk/Soul</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Folk">Folk</option>
+              <option value="World">World</option>
+              <option value="Country">Country</option>
+              <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
+              <option value="Classical">Classical</option>
+              <option value="Musicals">Musicals</option>
+              <option value="Reggae">Reggae</option>
+              <option value="Latin">Latin</option>
+              <option value="Blues">Blues</option>
+              <option value="Comedy">Comedy</option>
+        </select>   
+        <button class="btn btn-outline-light my-2 my-sm-0" id="filter-genre"type="submit">Filter</button>
+      </form>
+      {{/if}}
     </ul>
 
   </div>
@@ -48,4 +72,5 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+<script src="/javascript/filterGenre.js"></script>
 </html>
