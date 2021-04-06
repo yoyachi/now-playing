@@ -6,6 +6,7 @@ async function signupFormHandler(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const location = document.querySelector('#location-signup').value.trim();
+    const bio = '';
 
   
     if (username && email && password) {
@@ -15,7 +16,8 @@ async function signupFormHandler(event) {
           username,
           email,
           password,
-          location
+          location,
+          bio
         }),
         headers: { 'Content-Type': 'application/json' }
       });
