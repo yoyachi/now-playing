@@ -34,6 +34,10 @@ a:hover {
 .genre-label{
     color: whitesmoke;
 }
+
+#genre-form {
+    float: right;
+}
 .animate {
     width: 100%;
     height: 100vh;

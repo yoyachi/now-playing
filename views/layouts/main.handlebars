@@ -19,16 +19,16 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="nav navbar-nav mr-auto">
       {{#if loggedIn}}
       <li class="nav-item">
         <a class="nav-link" href="/profile/user">Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/login" id="logout">Log Out</a>
-      </li>
-      <li class="niav-item">
         <a class="nav-link" href="/search" id="search"><i class="fas fa-search"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login" id="logout">Log Out</a>
       </li>
       {{else}}
       <li class="nav-item">
@@ -38,6 +38,8 @@
         <a class="nav-link" href="/signup">Sign Up</a>
       </li>
       {{/if}}
+    </ul>
+    <ul class="bnav navbar-nav navbar-right">
       {{#if homepage}}
       <li class="form-inline my-0" id="genre-form">
         <label for="post-genre" class="genre-label nav-link pr-2">Genre</label>
