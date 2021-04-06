@@ -1,7 +1,9 @@
-<div id="post-list" class="post card col-md-6">
+<div class="post card col-md-6">
     
     <div class="title card-title">
-    <a class="username" href="/profile/{{user.id}}">{{user.username}}</a> 
+    <a class="username" href="/profile/{{user.id}}">
+    <i class="fa fa-user"></i>
+    {{user.username}}</a> 
         <span class="createdAt">
         {{format_date createdAt}}
         </span>
@@ -15,7 +17,7 @@
         <p><span class= "description">{{description}}</span></p>
         <a href="/post/{{id}}">({{comments.length}} {{format_plural "comment" comments.length}})</a>
     </div>
-    
+
     {{#if loggedIn}}
     <a href="/profile/edit-post/{{id}}" class="edit-link">Edit Post</a>
     {{/if}}
