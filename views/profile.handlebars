@@ -1,24 +1,28 @@
 <section class="animate-feed">
 <section class="profile-info container">
   <div class="row">
+      <div class= "col">
+        <h4 class="userIdAccess" id='{{user.user_id}}'>{{user.username}}</h4>
+      </div>
+      <div class= "col">
+        {{#if loggedIn}}
+        <a href="/profile/edit-profile/{{user.user_id}}">Edit Profile</a>
+        {{/if}}
+      </div>
+  </div>
+  <div class="row">
     <div class="col profile-col-1 text-white">
-      <h4 class="userIdAccess" id='{{user.user_id}}'>{{user.username}}</h4>
       <h6>Email: {{user.email}}</h6>
       <h6>Location: {{user.location}}</h6> 
     </div>
     <div class = "col text-white" id="bioInfo">
         {{#if user.bio}}
-        <h6>Bio:</h6>
-        <p name="bio" id="" cols="60" rows="2"></p>
-        {{user.bio}}
+        <h6>Bio: <i>{{user.bio}}</i></h6>
         </p>
         {{else}}
         {{#unless loggedIn}}
         <button class='btn btn-primary' id="add-bio">Add a bio!</button>
         {{/unless}}
-        {{/if}}
-        {{#if loggedIn}}
-        <a href="/profile/edit-profile/{{user.user_id}}" class="edit-link">Edit Profile</a>
         {{/if}}
     </div>
   </div>

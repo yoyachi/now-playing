@@ -1,9 +1,9 @@
-<section>
-  <h2>Edit post:</h2>
-
+<section class= "animate">
   <div class="container">
     <div class="row">
-      <form class="add-post-form">
+      <div class="col-3"></div>
+      <form class="add-post-form col-6">
+          <h2>Edit post:</h2>
           <div>
             <label for="post-artist">Artist:</label>
             <input type="text" id="post-artist" class="form-control" name="post-artist" value="{{post.artist}}"/>
@@ -14,7 +14,7 @@
           </div>
           <div>
             <label for="post-genre">Genre</label>
-            <select type="text" id="post-genre" name="post-genre">
+            <select class="form-control" type="text" id="post-genre" name="post-genre">
                   <option value="Rock">Rock</option>
                   <option value="Electronic">Electronic</option>
                   <option value="Pop">Pop</option>
@@ -34,11 +34,11 @@
           </div>
           <div>
             <label for="post-year">Year</label>
-            <input type="text" id="post-year" name="post-year" value="{{post.year}}" placeholder="(optional)" />
+            <input class="form-control" type="text" id="post-year" name="post-year" value="{{post.year}}" placeholder="(optional)" />
           </div>
           <div>
             <label for="post-format">Format</label>
-            <select type="text" id="post-format" name="post-format">
+            <select class="form-control" type="text" id="post-format" name="post-format">
                   <option value="Vinyl">Vinyl</option>
                   <option value="CD">CD</option>
                   <option value="Tape">Tape</option>
@@ -47,15 +47,17 @@
           </div>
           <div>
             <label for="post-photo">Photo URL</label>
-            <input type="text" id="post-photo" name="post-photo" value="{{post.photo_url}}"/>
+            <input class="form-control" type="text" id="post-photo" name="post-photo" value="{{post.photo_url}}"/>
           </div>
           <div>
             <label for="post-description">Description</label>
-            <textarea id="post-description" name="post-description" placeholder="(1-140 characters)" cols="30" rows="1" maxlength="140">{{post.description}}</textarea>
+            <input class="form-control" type="text" id="post-description" name="post-description" value="{{post.description}}"/>
+            {{!-- <textarea id="post-description" name="post-description" placeholder="(1-140 characters)" cols="30" rows="1" maxlength="140">{{post.description}}</textarea> --}}
           </div>
-          <button type="submit" class="btn btn-primary">Save</button>
-          <button id="delete-btn" class="btn btn-primary">Delete</button>
+          <button type="submit" class="btn btn-outline-light">Save</button>
+          <button id="delete-btn" class="btn btn-outline-light">Delete</button>
         </form>
+        <div class="col-3"></div>
     </div>
   </div>
 

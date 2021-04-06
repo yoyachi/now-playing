@@ -5,6 +5,7 @@
 }
 form{
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 .genre-label{
@@ -83,7 +84,7 @@ form{
     align-items: baseline;
 }
 
-.album-photo, .profile-col-1 {
+.album-photo {
     -ms-flex: 0 0 320px;
     flex: 0 0 320px;
 } 
