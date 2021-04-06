@@ -1,58 +1,68 @@
-<section class="add-post-section">
-  <h2>What are you listening to now?</h2>
+<section class="add-post-section animate">
+  <div class="container">
+    <div class="row">
+      <div class="col-3"></div>
 
- <form class="add-post-form">
-    <div>
-      <label for="post-artist">Artist</label>
-      <input type="text" id="post-artist" name="post-artist" />
+      <form class="add-post-form col-6">
+          <h2>What are you listening to now?</h2>
+          <div>
+            <label for="post-artist">Artist</label>
+            <input class="form-control" type="text" id="post-artist" name="post-artist" />
+          </div>
+          <div>
+            <label for="post-album">Album Title</label>
+            <input class="form-control" type="text" id="post-album" name="post-album" />
+          </div>
+          <div>
+            <label for="post-genre">Genre</label>
+            <select class="form-control" type="text" id="post-genre" name="post-genre">
+                  <option value="Blank"></option>
+                  <option value="Rock">Rock</option>
+                  <option value="Electronic">Electronic</option>
+                  <option value="Pop">Pop</option>
+                  <option value="Funk-Soul">Funk/Soul</option>
+                  <option value="Jazz">Jazz</option>
+                  <option value="Folk">Folk</option>
+                  <option value="World">World</option>
+                  <option value="Country">Country</option>
+                  <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
+                  <option value="Classical">Classical</option>
+                  <option value="Musicals">Musicals</option>
+                  <option value="Reggae">Reggae</option>
+                  <option value="Latin">Latin</option>
+                  <option value="Blues">Blues</option>
+                  <option value="Comedy">Comedy</option>
+            </select>     
+          </div>
+          <div>
+            <label for="post-year">Year</label>
+            <input class="form-control" type="text" id="post-year" name="post-year" />
+          </div>
+          <div>
+            <label for="post-format">Format</label>
+            <select class="form-control" type="text" id="post-format" name="post-format">
+                  <option value="Blank"></option>
+                  <option value="Vinyl">Vinyl</option>
+                  <option value="CD">CD</option>
+                  <option value="Tape">Tape</option>
+                  <option value="Streaming">Streaming</option>
+            </select>     
+          </div>
+          <div>
+            <label for="post-photo">Photo URL</label>
+            <input class="form-control" type="text" id="post-photo" name="post-photo" />
+          </div>
+          <div>
+            <label for="post-description">Description</label>
+            <input class="form-control" type="text" id="post-description" name="post-description" value="{{post.description}}"/>
+            {{!-- <textarea id="post-description" name="post-description" placeholder="(1-140 characters)" cols="30" rows="1" maxlength="140"></textarea> --}}
+          </div>
+          <button type="submit" class="btn btn-outline-light">Create</button>
+        </form>
+        <div class-"col-3"></div>
     </div>
-    <div>
-      <label for="post-album">Album Title</label>
-      <input type="text" id="post-album" name="post-album" />
-    </div>
-    <div>
-      <label for="post-genre">Genre</label>
-      <select type="text" id="post-genre" name="post-genre">
-            <option value="Rock">Rock</option>
-            <option value="Electronic">Electronic</option>
-            <option value="Pop">Pop</option>
-            <option value="Funk-Soul">Funk/Soul</option>
-            <option value="Jazz">Jazz</option>
-            <option value="Folk">Folk</option>
-            <option value="World">World</option>
-            <option value="Country">Country</option>
-            <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
-            <option value="Classical">Classical</option>
-            <option value="Musicals">Musicals</option>
-            <option value="Reggae">Reggae</option>
-            <option value="Latin">Latin</option>
-            <option value="Blues">Blues</option>
-            <option value="Comedy">Comedy</option>
-      </select>     
-    </div>
-    <div>
-      <label for="post-year">Year</label>
-      <input type="text" id="post-year" name="post-year" />
-    </div>
-    <div>
-      <label for="post-format">Format</label>
-      <select type="text" id="post-format" name="post-format">
-            <option value="Vinyl">Vinyl</option>
-            <option value="CD">CD</option>
-            <option value="Tape">Tape</option>
-            <option value="Streaming">Streaming</option>
-      </select>     
-    </div>
-    <div>
-      <label for="post-photo">Photo URL</label>
-      <input type="text" id="post-photo" name="post-photo" />
-    </div>
-    <div>
-      <label for="post-description">Description</label>
-      <textarea id="post-description" name="post-description" placeholder="(1-140 characters)" cols="30" rows="1" maxlength="140"></textarea>
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+  </div>
+
 </section>
 
 <script src="/javascript/add-post.js"></script>

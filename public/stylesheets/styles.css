@@ -5,6 +5,7 @@
 }
 form{
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 .genre-label{
@@ -55,7 +56,8 @@ form{
 #post-list {
     align-content: center;
     margin: 3% auto;
-    border: 1px solid #17185a;
+    border: 1px solid #b9bafa;
+    border-radius: 10px;
 }
 
 .card {
@@ -82,7 +84,7 @@ form{
     align-items: baseline;
 }
 
-.album-photo, .profile-col-1 {
+.album-photo {
     -ms-flex: 0 0 320px;
     flex: 0 0 320px;
 } 
