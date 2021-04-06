@@ -38,7 +38,7 @@ a:hover {
     width: 100%;
     height: 100vh;
     color: #fff;
-    background: linear-gradient(-45deg,#b9bafa, #883da9, #5c36d0, #2355d5, #1eb870);
+    background: linear-gradient(-45deg,#b9bafa, #9d40c4, #5c36d0, #2355d5, #1eb870);
     background-size: 400% 400%;
     position: relative;
     animation: change 20s ease-in-out infinite;
@@ -91,6 +91,10 @@ a:hover {
     padding-bottom: 5px;
 }
 
+.user-list-item {
+    margin-left: 50px;
+}
+
 .card {
     background-color: #171717;
     color: whitesmoke;
@@ -128,6 +132,10 @@ a:hover {
 
 .description {
     font-style: italic;
+}
+
+.no-posts {
+    margin-left: 20px;
 }
 
 .comments, .comment-form {

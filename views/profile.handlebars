@@ -2,7 +2,9 @@
 <section class="profile-info container">
   <div class="row">
       <div class= "col-4">
-        <h4 class="userIdAccess" id='{{user.id}}'>{{user.username}}</h4>
+        <h4 class="userIdAccess" id='{{user.id}}'>
+          <i class="fa fa-user fa-xs"></i>
+          {{user.username}}</h4>
       </div>
       <div class= "col-8">
         {{#if user_profile}}
@@ -42,7 +44,7 @@
   </ul>
 </section>
 {{else}}
-<h2 class='text-white'>No posts!</h2>
+<h4 class='text-white no-posts'>No posts yet!</h4>
 {{/if}}
 
 {{#if user_profile}}
