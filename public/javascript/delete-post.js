@@ -11,7 +11,7 @@ async function deleteFormHandler(event) {
     if (response.ok) {
       document.location.replace('/profile/user');
     } else {
-      alert(response.statusText);
+      alert("Post failed to delete... Please try again.");
     }
   }
   

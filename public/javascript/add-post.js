@@ -29,7 +29,7 @@ async function newFormHandler(event) {
     if (response.ok) {
       document.location.replace('/profile/user');
     } else {
-      alert(response.statusText);
+      alert("Post failed to add... Please check that your input info is valid and try again.");
     }
   }
   

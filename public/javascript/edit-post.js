@@ -32,7 +32,7 @@ async function editFormHandler(event) {
     if(response.ok){
         document.location.replace('/profile/user');
     } else {
-        alert(response.statusText);
+        alert("Failed to edit user... Please check that your input info is valid and try again.");
     }
   
   }

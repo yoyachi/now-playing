@@ -37,7 +37,7 @@ async function addBio(event) {
       if (response.ok) {
         document.location.replace('/profile/user');
       } else {
-        alert(response.statusText);
+        alert("Failed to add a bio... Please try again.");
       }
 
 }

@@ -17,7 +17,7 @@ async function loginFormHandler(event) {
       if (response.ok) {
         document.location.replace('/profile/user');
       } else {
-        alert(response.statusText);
+        alert("Login failed... Double check your username and password and try again.");
       }
     }
   }
