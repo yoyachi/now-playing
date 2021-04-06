@@ -149,7 +149,7 @@ a:hover {
 
 .comment-row {
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
 }
 
 #textarea {
