@@ -1,34 +1,21 @@
 <div id="post-list" class="post card col-md-6">
+    
     <div class="title card-title">
-    {{!-- <a href="/post/{{id}}" target="_blank">{{album_title}}</a> --}}
-    {{!-- <span> --}}
     <a class="username" href="/profile/{{user.id}}">{{user.username}}</a> 
         <span class="createdAt">
         {{format_date createdAt}}
         </span>
-    {{!-- </span> --}}
     </div>
+
     <div class="post-text card-body container">
-        <div class="col">
-            {{!-- <div class= "col-sm album-photo"> --}}
-                <img src="{{photo_url}}" alt="Album Photo" id="album-photo">
-            {{!-- </div> --}}
-            {{!-- <div class= "col-sm"> --}}
-                <p>{{artist}} - {{album_title}} ({{year}}) </p>
-                {{!-- <p>Genre: {{genre}} | Format: {{format}}</p> --}}
-                <p>Genre: {{genre}}</p>
-                <p>Format: {{format}}</p>
-                <p><span class= "description">{{description}}</span></p>
-                <a href="/post/{{id}}">({{comments.length}} {{format_plural "comment" comments.length}})</a>
-                {{!-- {{#if loggedIn}}
-                <a href="/profile/edit-post/{{post.id}}" class="edit-link">Edit Post</a>
-                {{/if}} --}}
-            {{!-- </div> --}}
-        </div>     
+        <img src="{{photo_url}}" alt="Album Photo" id="album-photo">
+        <p>{{artist}} - {{album_title}} ({{year}}) </p>
+        <p>Genre: {{genre}}</p>
+        <p>Format: {{format}}</p>
+        <p><span class= "description">{{description}}</span></p>
+        <a href="/post/{{id}}">({{comments.length}} {{format_plural "comment" comments.length}})</a>
     </div>
-    {{!-- <div class="meta">
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-    </div> --}}
+    
     {{#if loggedIn}}
     <a href="/profile/edit-post/{{id}}" class="edit-link">Edit Post</a>
     {{/if}}
