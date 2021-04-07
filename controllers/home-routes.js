@@ -52,7 +52,8 @@ router.get('/search', (req,res) => {
     if (!req.query.input) {
         res.render('search', {
             loggedIn: req.session.loggedIn
-        }); 
+        });
+        return;
     }
 
     User.findAll({
