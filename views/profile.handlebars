@@ -3,7 +3,7 @@
   <div class="row d-block">
       <div class= "col-4">
         <h4 class="userIdAccess" id='{{user.id}}'>
-          <i class="fa fa-user fa-xs faa-float animated faa-slow"></i>
+          <i class="fa fa-headphones fa-xs faa-float animated"></i>
           {{user.username}}</h4>
       </div>
       <div class= "col-8">
@@ -30,10 +30,13 @@
   </div>
 </section>
 
-
+{{#if user_profile}}
+  <a class="add-post-link" href="/profile/post"> <h3> <i class="fa fa-compact-disc faa-spin animated"></i> Add New Post</h3> </a>
+  {{/if}}
 {{#if posts.length}}
 <section>
-  {{!-- <h2>Your Posts</h2> --}}
+  
+  <h3 class="old-posts">Posts:</h3>
   <ul>
     {{#each posts as |post|}}
     <li class="post-info">
@@ -46,9 +49,7 @@
 <h4 class='text-white no-posts'>No posts yet!</h4>
 {{/if}}
 
-{{#if user_profile}}
-<a class="add-post-link" href="/profile/post"> + New Post</a>
-{{/if}}
+
 </section>
 
 <script src="/javascript/add-bio.js"></script>

@@ -2,7 +2,7 @@
     
     <div class="title card-title">
     <a class="username faa-parent animated-hover" href="/profile/{{user.id}}">
-    <i class="fa fa-user fa-xs faa-float"></i>
+    <i class="fa fa-headphones fa-xs faa-bounce faa-slow"></i>
     {{user.username}}
     </a> 
         <span class="createdAt">
@@ -21,7 +21,7 @@
         <a href="/post/{{id}}">{{comments.length}} 
             {{format_plural "comment" comments.length}} | 
             {{votes.length}}
-            {{format_plural "vote" votes.length}}
+            {{format_plural "like" votes.length}}
             </a>
     </div>
 

@@ -85,6 +85,13 @@ a:hover {
     background-color: #b9bafa80;
 }
 
+.vote-btn:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+.unvote-btn:hover {
+    background-color: whitesmoke;
+}
+
 .select {
     margin: 15px 0 0 0;
 }
@@ -184,7 +191,7 @@ a:hover {
     margin-left: 10px;
 }
 
-.add-post-link {
+.add-post-link h3, .old-posts {
     margin-left: 20px;
 }
 
