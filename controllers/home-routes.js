@@ -24,6 +24,10 @@ router.get('/', (req,res) => {
             {
                 model: User,
                 attributes: ['id', 'username', 'email', 'bio']
+            },
+            {
+                model: Vote,
+                attributes: ['user_id', 'post_id']
             }
         ],
         order: [['created_at', 'DESC']],
@@ -102,6 +106,10 @@ router.get('/:genre', (req,res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Vote,
+                attributes: ['user_id', 'post_id']
             }
         ]
     }).then(data => {
