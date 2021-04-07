@@ -26,7 +26,7 @@ async function signupFormHandler(event) {
       if (response.ok) {
         document.location.replace('/profile/user');
       } else {
-        alert("Failed to Sign Up. Please check that your input info is valid and try again.");
+        alert('That username or email is already being used by another profile!');
       }
     }
   }
