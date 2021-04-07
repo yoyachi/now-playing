@@ -25,32 +25,7 @@ async function upvoteClickHandler(event) {
       }
   }
 
-//DELETE VOTE
-  async function downvoteClickHandler(event) {
-    event.preventDefault()
-  
-    const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
 
-    console.log(id)
-  
-    const response = await fetch('/api/posts/upvote', {
-        method: 'DELETE',
-        body: JSON.stringify({
-          post_id: id
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        document.location.reload();
-      } else {
-        alert("Failed to remove vote on this post... Please try again.");
-      }
-  }
   
   document.querySelector('.vote-btn').addEventListener('click', upvoteClickHandler);
-  document.querySelector('.unvote-btn').addEventListener('click', downvoteClickHandler);
+  
