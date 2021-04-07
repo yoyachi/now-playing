@@ -40,6 +40,9 @@ Also used
 
 ## URL 
 
+* Deployed:  **https://nowplayingapp.herokuapp.com/**
+* GitHub repo: **https://github.com/drewvena/now-playing/tree/main**
+
 ## License
 
 **MIT https://choosealicense.com/licenses/mit/**

@@ -126,7 +126,7 @@ router.put('/:id', (req,res) => {
       
             res.json({ user: data, message: 'Y' });
           });
-    })
+    }).catch(err => res.status(404).json(err));
 });
 // delete user
 router.delete('/:id', (req,res) => {
