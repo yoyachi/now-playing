@@ -1,10 +1,10 @@
 <section class= "animate">
   <div class="container">
-    <div class="row">
-      <div class="col-3"></div>
-      <form class="add-post-form col-6">
+    <div class="row d-flex justify-content-center">
+        <img src="/assets/images/edit-post-header.png" alt="Edit Post" class="header-img">
+      {{!-- <div class="col-3"></div> --}}
+      <form class="add-post-form col-10">
           {{!-- <h2>Edit post:</h2> --}}
-          <img src="/assets/images/edit-post-header.png" alt="Edit Post" class="header-img">
           <div>
             <label for="post-artist">Artist:</label>
             <input type="text" id="post-artist" class="form-control" name="post-artist" value="{{post.artist}}"/>
@@ -58,7 +58,7 @@
           <button type="submit" class="btn btn-outline-light">Save</button>
           <button id="delete-btn" class="btn btn-outline-light">Delete</button>
         </form>
-        <div class="col-3"></div>
+        {{!-- <div class="col-3"></div> --}}
     </div>
   </div>
 

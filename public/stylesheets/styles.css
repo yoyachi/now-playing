@@ -18,8 +18,9 @@ nav {
     background-image: linear-gradient(135deg, #272728 0%, #060606 100%);
 }
 form{
-    margin-left: 20px;
-    margin-top: 20px;
+    margin: 20px;
+    /* margin-left: 20px;
+    margin-top: 20px; */
 }
 a {
   color: whitesmoke;
