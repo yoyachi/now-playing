@@ -133,10 +133,15 @@ router.get('/post/:id', (req,res) => {
                         attributes: ['username', 'id']
                     }
                 ]
+            },
+            {
+                model: Vote,
+                attributes: ['user_id', 'post_id']
             }
         ]
     }).then(data => {
         const posts = data.get({ plain: true });
+        let voted = false;
         posts.comments.map(comment => {
             if(comment.user_id === req.session.user_id) {
                 comment.loggedIn = true;
@@ -144,11 +149,15 @@ router.get('/post/:id', (req,res) => {
             }
             comment.loggedIn = false;
         });
+        posts.votes.map(user => {
+            if(Number(user.user_id) === Number(req.session.user_id)){
+                voted = true;
+            }
+        })
         res.render('single-post', {
             posts,
             loggedIn: req.session.loggedIn,
-            
-            
+            voted
         });
     }).catch(err => {
         console.log(err);
