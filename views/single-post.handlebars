@@ -10,6 +10,7 @@
 
       <div>
         <button class="btn btn-outline-light text-light" type="submit">Comment</button>
+        <button class="btn btn-outline-light text-light vote-btn" type="submit"><i class = "fa fa-heart"></i></button>
       </div>
     </form>
     {{/if}}
@@ -20,6 +21,7 @@
   </div>
 
     {{#if loggedIn}}
+    <script src="/javascript/vote.js"></script>
     <script src="/javascript/comment.js"></script>
     <script src="/javascript/delete-comment.js"></script>
     {{/if}}
