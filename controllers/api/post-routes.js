@@ -128,6 +128,19 @@ router.put('/:id', (req,res) => {
         res.status(400).json(err);
     });
 });
+router.delete('/upvote', (req, res) => {
+    const post_id = req.query.post_id;
+    // make sure the session exists first
+    if (req.session) {
+      // pass session id along with all destructured properties on req.body
+      Post.downvote({user_id: req.session.user_id, post_id: post_id}, { Vote, Comment, User })
+        .then(updatedVoteData => res.json(updatedVoteData))
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    }
+  });
 // delete post
 router.delete('/:id', (req,res) => {
     Post.destroy({

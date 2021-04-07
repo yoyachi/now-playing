@@ -28,6 +28,32 @@ class Post extends Model {
       });
     });
   }
+  static downvote(body, models) {
+    return models.Vote.destroy({
+      where: {
+        user_id: body.user_id
+      }
+    }).then(() => {
+      return Post.findOne({
+        where: {
+          id: body.post_id
+        },
+        attributes: [
+          'id',
+          "artist",
+          "album_title",
+          "genre",
+          "year",
+          "format",
+          "photo_url",
+          "description",
+          "createdAt",
+          "updatedAt",
+          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      ],
+      });
+    });
+  }
 }
 
 Post.init(

@@ -21,7 +21,11 @@
   </div>
 
     {{#if loggedIn}}
+    {{#if voted}}
+    <script src='/javascript/unvote.js'></script>
+    {{else}}
     <script src="/javascript/vote.js"></script>
+    {{/if}}
     <script src="/javascript/comment.js"></script>
     <script src="/javascript/delete-comment.js"></script>
     {{/if}}
