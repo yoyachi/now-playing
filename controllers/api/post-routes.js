@@ -33,6 +33,10 @@ router.get('/', (req,res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Vote,
+                attributes: ['user_id', 'post_id']
             }
         ]
     }).then(data => res.json(data)).catch(err => {
@@ -73,6 +77,10 @@ router.get('/:id', (req,res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Vote,
+                attributes: ['user_id', 'post_id']
             }
         ]
     }).then(data => res.json(data)).catch(err => {
