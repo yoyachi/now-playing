@@ -27,13 +27,14 @@ Model-View-Controller paradigm
 * MySql2
 * Sequelize
 
-Also needed
+Also used
 
 * Dotenv package (to use environment variables)
 * Bcrypt package (to hash passwords)
 * Express-session package.
 * Connect-session-sequelize package (to add authentication)
 * CSS
+* Bootstrap
 
 ## Screenshot
 
