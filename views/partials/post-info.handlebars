@@ -11,15 +11,17 @@
     </div>
 
     <div class="post-text card-body container">
-        <img src="{{photo_url}}" alt="Album Photo" id="album-photo">
+        <a href="/post/{{id}}">
+            <img src="{{photo_url}}" alt="Album Photo" id="album-photo">
+        </a>
         <p>{{artist}} - {{album_title}} ({{year}}) </p>
         <p>Genre: {{genre}}</p>
         <p>Format: {{format}}</p>
         <p><span class= "description">{{description}}</span></p>
-        <a href="/post/{{id}}">({{comments.length}} 
-            {{format_plural "comment" comments.length}}
+        <a href="/post/{{id}}">{{comments.length}} 
+            {{format_plural "comment" comments.length}} | 
             {{votes.length}}
-            {{format_plural "vote" vote.length}})
+            {{format_plural "vote" votes.length}}
             </a>
     </div>
 
