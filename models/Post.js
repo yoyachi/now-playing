@@ -13,15 +13,18 @@ class Post extends Model {
           id: body.post_id
         },
         attributes: [
-          'id',
-          'post_url',
-          'title',
-          'created_at',
-          [
-            sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
-            'vote_count'
-          ]
-        ]
+          id,
+          artist,
+          album_title,
+          genre,
+          year,
+          format,
+          photo_url,
+          decription,
+          createdAt,
+          updatedAt,
+          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      ],
       });
     });
   }

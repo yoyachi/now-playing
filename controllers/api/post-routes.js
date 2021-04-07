@@ -5,11 +5,23 @@ const { User, Post, Comment } = require('../../models');
 // get all posts
 router.get('/', (req,res) => {
     Post.findAll({
+        attributes: [
+            'id',
+            'artist',
+            'album_title',
+            'genre',
+            'year',
+            'format',
+            'photo_url',
+            'description',
+            'createdAt',
+            'updatedAt',
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        ],
         include: [
             {
                 model: Comment,
-                attributes: ['comment_text', 'user_id', 'post_id', 'created_at',
-                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+                attributes: ['comment_text', 'user_id', 'post_id', 'created_at'
             ],
                 include: [
                     {
@@ -34,12 +46,23 @@ router.get('/:id', (req,res) => {
         where: {
             id: req.params.id
         },
+        attributes: [
+            'id',
+            'artist',
+            'album_title',
+            'genre',
+            'year',
+            'format',
+            'photo_url',
+            'description',
+            'createdAt',
+            'updatedAt',
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        ],
         include: [
             {
                 model: Comment,
-                attributes: ['comment_text', 'user_id', 'post_id', 'created_at',
-                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-            ],
+                attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
                 include: [
                     {
                         model: User,
