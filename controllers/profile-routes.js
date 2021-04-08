@@ -87,6 +87,7 @@ router.get('/:id', (req,res) => {
     // if the user is trying to look at their own page, they will be redirected to /profile/user
     if(Number(req.params.id) === Number(req.session.user_id)) {
         res.redirect('/profile/user');
+        return;
     }
     // if the user is not redirected, a query is made to find all posts for the specified user
     Post.findAll({

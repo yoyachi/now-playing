@@ -193,6 +193,10 @@ a:hover {
     margin-left: 10px;
 }
 
+.word-wrap {
+    word-break: break-word;
+}
+
 .add-post-link h3, .old-posts {
     margin-left: 20px;
 }
