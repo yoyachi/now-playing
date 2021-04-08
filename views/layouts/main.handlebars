@@ -43,13 +43,13 @@
     <ul class="bnav navbar-nav navbar-right">
       {{#if homepage}}
       <li class="form-inline my-0" id="genre-form">
-        <label for="post-genre" class="genre-label nav-link pr-2">Filter</label>
+        {{!-- <label for="post-genre" class="genre-label nav-link pr-2">Filter</label> --}}
         <select type="text" id="post-genre" name="post-genre" class="form-control-sm my-0">
-          <optgroup label="Genre">
             <option value="All" id="genres">All</option>
+          <optgroup label="Genre">
             <option value="Rock" id="genres">Rock</option>
             <option value="Electronic" id="genres">Electronic</option>
-            <option value="Pop">Pop id="genres"</option>
+            <option value="Pop" id="genres">Pop </option>
             <option value="Funk-Soul" id="genres">Funk/Soul</option>
             <option value="Jazz" id="genres">Jazz</option>
             <option value="Folk" id="genres">Folk</option>
@@ -65,7 +65,7 @@
           </optgroup>
           <optgroup label="Decade">
             <option value="Pre-1960" id="decades">Pre-1960s</option>
-            <option value="1960" id="decades">1960's</option>
+            <option value="196" id="decades">1960's</option>
             <option value="1970" id="decades">1970's</option>
             <option value="1980" id="decades">1980's</option>
             <option value="1990" id="decades">1990's</option>
