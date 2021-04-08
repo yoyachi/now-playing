@@ -61,12 +61,14 @@ a:hover {
 }
 
 .header-row {
-    padding-top: 20px;
     justify-content: center;
+
+    
 }
 
 .header-img {
     width: 80%;
+    object-fit: scale-down;
 }
 
 #album-photo {
