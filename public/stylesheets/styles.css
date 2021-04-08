@@ -62,12 +62,11 @@ a:hover {
 
 .header-row {
     justify-content: center;
-
-    
 }
 
 .header-img {
     width: 80%;
+    object-fit: scale-down;
 }
 
 #album-photo {
