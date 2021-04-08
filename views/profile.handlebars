@@ -1,19 +1,19 @@
 <section class="animate-feed">
 <section class="profile-info container">
-  <div class="row">
+  <div class="row pb-2">
       <div class= "col-4">
         <h4 class="userIdAccess" id='{{user.id}}'>
           <i class="fa fa-headphones fa-xs faa-float animated"></i>
           {{user.username}}</h4>
       </div>
-      <div class= "col-8">
+      <div class= "col-md-8">
         {{#if user_profile}}
         <a href="/profile/edit-profile/{{user.id}}" class="faa-parent animated-hover"><i class="fas fa-user faa-ring"></i> Edit Profile</a>
         {{/if}}
       </div>
   </div>
   <div class="row">
-    <div class="col-4 text-white">
+    <div class="col-md-4 text-white">
       <h6 class="word-wrap">Email: {{user.email}}</h6>
       <h6 class='word-wrap'>Location: {{user.location}}</h6> 
     </div>
