@@ -43,24 +43,32 @@
     <ul class="bnav navbar-nav navbar-right">
       {{#if homepage}}
       <li class="form-inline my-0" id="genre-form">
-        <label for="post-genre" class="genre-label nav-link pr-2">Genre</label>
+        <label for="post-genre" class="genre-label nav-link pr-2">Filter</label>
         <select type="text" id="post-genre" name="post-genre" class="form-control-sm my-0">
-              <option value="All">All</option>
-              <option value="Rock">Rock</option>
-              <option value="Electronic">Electronic</option>
-              <option value="Pop">Pop</option>
-              <option value="Funk-Soul">Funk/Soul</option>
-              <option value="Jazz">Jazz</option>
-              <option value="Folk">Folk</option>
-              <option value="World">World</option>
-              <option value="Country">Country</option>
-              <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
-              <option value="Classical">Classical</option>
-              <option value="Musicals">Musicals</option>
-              <option value="Reggae">Reggae</option>
-              <option value="Latin">Latin</option>
-              <option value="Blues">Blues</option>
-              <option value="Comedy">Comedy</option>
+          <optgroup label="Genre">
+            <option value="All">All</option>
+            <option value="Rock">Rock</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Pop">Pop</option>
+            <option value="Funk-Soul">Funk/Soul</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Folk">Folk</option>
+            <option value="World">World</option>
+            <option value="Country">Country</option>
+            <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
+            <option value="Classical">Classical</option>
+            <option value="Musicals">Musicals</option>
+            <option value="Reggae">Reggae</option>
+            <option value="Latin">Latin</option>
+            <option value="Blues">Blues</option>
+            <option value="Comedy">Comedy</option>
+          </optgroup>
+          <optgroup label="Decade">
+            <option value="1980">1980's</option>
+          </optgroup>
+          <optgroup label="Format">
+            
+          </optgroup>
         </select>   
         <button class="btn btn-outline-light my-0" id="filter-genre"type="button">Filter</button>
       </li>
