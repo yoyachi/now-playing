@@ -13,9 +13,9 @@
       </div>
   </div>
   <div class="row">
-    <div class="col-4 profile-col-1 text-white">
-      <h6>Email: {{user.email}}</h6>
-      <h6>Location: {{user.location}}</h6> 
+    <div class="col-4 text-white">
+      <h6 class="word-wrap">Email: {{user.email}}</h6>
+      <h6 class='word-wrap'>Location: {{user.location}}</h6> 
     </div>
     <div class = "col-8 text-white" id="bioInfo">
         {{#if user.bio}}
@@ -52,4 +52,3 @@
 
 </section>
 
-<script src="/javascript/add-bio.js"></script>
