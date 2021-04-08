@@ -67,7 +67,7 @@ a:hover {
 
 .header-img {
     width: 80%;
-    object-fit: contain;
+    object-fit: fill;
 }
 
 #album-photo {
