@@ -109,9 +109,44 @@ router.get('/search', (req,res) => {
                 loggedIn: req.session.loggedIn
             });
         }).catch(err => res.status(404).json(err));
-
     }
     
+    else if (req.query.name === 'Album') {
+
+        Post.findAll({
+            where: {
+                album_title: {
+                    [Op.like]: '%' + req.query.input + '%'
+                }
+            },
+            include: [
+                {
+                    model: Comment,
+                    attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['username']
+                        }
+                    ]
+                },
+                {
+                    model: User,
+                    attributes: ['id', 'username', 'email', 'bio']
+                },
+                {
+                    model: Vote,
+                    attributes: ['user_id', 'post_id']
+                }
+            ]
+        }).then(data => {
+            const posts = data.map(user => user.get({ plain: true }));
+            res.render('search', {
+                posts,
+                loggedIn: req.session.loggedIn
+            });
+        }).catch(err => res.status(404).json(err));
+    }
 });
 
 // login page
