@@ -1,21 +1,32 @@
 <section class="animate-search py-2">
 
-
-<form id="search-form">
-    <label for="search">Search by: </label>
-    <select type="text" name="search" class="form-control-sm" id="search-for">
-        <option value="User">User</option>
-    </select>
-    <input type="text" class="form-control-sm" id="search-form-input" />
-    <button class='btn btn-outline-light' type="submit">Search</button>
-</form>
-
+<div class="text-center">
+    <form id="search-form">
+        {{!-- <label for="search">Search by: </label> --}}
+        <select type="text" name="search" class="form-control-sm" id="search-for">
+            <option value="User">User</option>
+            <option value="Artist">Artist</option>
+            <option value="Album">Album</option>
+        </select>
+        <input type="text" class="form-control-sm" id="search-form-input" />
+        <button class='btn btn-outline-light' type="submit">Search</button>
+    </form>
+</div>
 
 <ul>
 {{#each users}}
-<li class="user-list-item">
-    <a href='/profile/{{id}}'>{{username}}</a>
+<li class="user-list-item ml-20">
+    <a href='/profile/{{id}}'>
+    <h5 class="faa-parent animated-hover"><i class="fa fa-headphones faa-bounce faa-slow"></i> {{username}}</h5> 
+    <p><i>"{{bio}}"</i></p>
+    </a>
 </li>
+{{/each}}
+{{#each posts as |post|}}
+    <li class="post-list-item m-auto">
+        {{!-- <a href='/post/{{id}}'>{{artist}} - {{album_title}} {{year}}</a> --}}
+      {{> post-info post}}
+    </li>
 {{/each}}
 </ul>
 

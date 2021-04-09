@@ -43,24 +43,42 @@
     <ul class="bnav navbar-nav navbar-right">
       {{#if homepage}}
       <li class="form-inline my-0" id="genre-form">
-        <label for="post-genre" class="genre-label nav-link pr-2">Genre</label>
+        {{!-- <label for="post-genre" class="genre-label nav-link pr-2">Filter</label> --}}
         <select type="text" id="post-genre" name="post-genre" class="form-control-sm my-0">
-              <option value="All">All</option>
-              <option value="Rock">Rock</option>
-              <option value="Electronic">Electronic</option>
-              <option value="Pop">Pop</option>
-              <option value="Funk-Soul">Funk/Soul</option>
-              <option value="Jazz">Jazz</option>
-              <option value="Folk">Folk</option>
-              <option value="World">World</option>
-              <option value="Country">Country</option>
-              <option value="Hip-Hop-Rap">Hip-Hop/Rap</option>
-              <option value="Classical">Classical</option>
-              <option value="Musicals">Musicals</option>
-              <option value="Reggae">Reggae</option>
-              <option value="Latin">Latin</option>
-              <option value="Blues">Blues</option>
-              <option value="Comedy">Comedy</option>
+            <option value="All" id="genres">All</option>
+          <optgroup label="Genre">
+            <option value="Rock" id="genres">Rock</option>
+            <option value="Electronic" id="genres">Electronic</option>
+            <option value="Pop" id="genres">Pop </option>
+            <option value="Funk-Soul" id="genres">Funk/Soul</option>
+            <option value="Jazz" id="genres">Jazz</option>
+            <option value="Folk" id="genres">Folk</option>
+            <option value="World" id="genres">World</option>
+            <option value="Country" id="genres">Country</option>
+            <option value="Hip-Hop-Rap" id="genres">Hip-Hop/Rap</option>
+            <option value="Classical" id="genres">Classical</option>
+            <option value="Musicals" id="genres">Musicals</option>
+            <option value="Reggae" id="genres">Reggae</option>
+            <option value="Latin" id="genres">Latin</option>
+            <option value="Blues" id="genres">Blues</option>
+            <option value="Comedy" id="genres">Comedy</option>
+          </optgroup>
+          <optgroup label="Decade">
+            <option value="Pre-1960" id="decades">Pre-1960s</option>
+            <option value="1960" id="decades">1960's</option>
+            <option value="1970" id="decades">1970's</option>
+            <option value="1980" id="decades">1980's</option>
+            <option value="1990" id="decades">1990's</option>
+            <option value="2000" id="decades">2000's</option>
+            <option value="2010" id="decades">2010's</option>
+            <option value="2020" id="decades">2020's</option>
+          </optgroup>
+          <optgroup label="Format">
+            <option value="Vinyl" id="formats">Vinyl</option>
+            <option value="CD" id="formats">CD</option>
+            <option value="Tape" id="formats">Tape</option>
+            <option value="Streaming" id="formats">Streaming</option>
+          </optgroup>
         </select>   
         <button class="btn btn-outline-light my-0" id="filter-genre"type="button">Filter</button>
       </li>
