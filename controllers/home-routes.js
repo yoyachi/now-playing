@@ -56,19 +56,61 @@ router.get('/search', (req,res) => {
         return;
     }
 
-    User.findAll({
-        where: {
-            username: {
-                [Op.like]: '%' + req.query.input + '%'
+    else if (req.query.name === 'User') {
+
+        User.findAll({
+            where: {
+                username: {
+                    [Op.like]: '%' + req.query.input + '%'
+                }
             }
-        }
-    }).then(data => {
-        const users = data.map(user => user.get({ plain: true }));
-        res.render('search', {
-            users,
-            loggedIn: req.session.loggedIn
-        });
-    }).catch(err => res.status(404).json(err));
+        }).then(data => {
+            const users = data.map(user => user.get({ plain: true }));
+            res.render('search', {
+                users,
+                loggedIn: req.session.loggedIn
+            });
+        }).catch(err => res.status(404).json(err));
+
+    }
+
+    else if (req.query.name === 'Artist') {
+
+        Post.findAll({
+            where: {
+                artist: {
+                    [Op.like]: '%' + req.query.input + '%'
+                }
+            },
+            include: [
+                {
+                    model: Comment,
+                    attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['username']
+                        }
+                    ]
+                },
+                {
+                    model: User,
+                    attributes: ['id', 'username', 'email', 'bio']
+                },
+                {
+                    model: Vote,
+                    attributes: ['user_id', 'post_id']
+                }
+            ]
+        }).then(data => {
+            const posts = data.map(user => user.get({ plain: true }));
+            res.render('search', {
+                posts,
+                loggedIn: req.session.loggedIn
+            });
+        }).catch(err => res.status(404).json(err));
+
+    }
     
 });
 

@@ -108,6 +108,11 @@ a:hover {
     margin-left: 50px;
 }
 
+.post-list-item {
+    margin-left: 50px;
+    list-style: none;
+}
+
 .card {
     background-color: #171717;
     color: whitesmoke;
