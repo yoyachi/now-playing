@@ -71,10 +71,6 @@ router.get('/search', (req,res) => {
     }).catch(err => res.status(404).json(err));
     
 });
-// profile page
-router.get('/profile', (req,res) => {
-    res.render("profile");
-});
 
 // login page
 router.get('/login', (req,res) => {
@@ -87,40 +83,158 @@ router.get('/signup', (req,res) => {
 });
 
 // look for posts based on genre
-router.get('/:genre', (req,res) => {
-    Post.findAll({
-        where: {
-            genre: req.params.genre
-        },
-        order: [['created_at', 'DESC']],
-        include: [
-            {
-                model: Comment,
-                attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+router.get('/:filter', (req,res) => {
+    const filter = req.params.filter;
+    const optgroup = req.query.optgroup;
+    switch (optgroup){
+        case 'genres':
+            Post.findAll({
+                where: {
+                    genre: filter
+                },
+                order: [['created_at', 'DESC']],
                 include: [
+                    {
+                        model: Comment,
+                        attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                        include: [
+                            {
+                                model: User,
+                                attributes: ['username']
+                            }
+                        ]
+                    },
                     {
                         model: User,
                         attributes: ['username']
+                    },
+                    {
+                        model: Vote,
+                        attributes: ['user_id', 'post_id']
                     }
                 ]
-            },
-            {
-                model: User,
-                attributes: ['username']
-            },
-            {
-                model: Vote,
-                attributes: ['user_id', 'post_id']
+            }).then(data => {
+                const posts = data.map(post => post.get({ plain: true }));
+                res.render('homepage', {
+                    posts,
+                    loggedIn: req.session.user_id,
+                    homepage: true
+                })
+            }).catch(err => res.status(500).json(err));
+            break;
+        case 'decades':
+            const year = Number(filter);
+            if (year > 1959) {
+                Post.findAll({
+                    where: {
+                        year: {
+                            [Op.between]: [year, year+9]
+                        }
+                    },
+                    order: [['created_at', 'DESC']],
+                    include: [
+                        {
+                            model: Comment,
+                            attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                            include: [
+                                {
+                                    model: User,
+                                    attributes: ['username']
+                                }
+                            ]
+                        },
+                        {
+                            model: User,
+                            attributes: ['username']
+                        },
+                        {
+                            model: Vote,
+                            attributes: ['user_id', 'post_id']
+                        }
+                    ]
+                }).then(data => {
+                    const posts = data.map(post => post.get({ plain: true }));
+                    res.render('homepage', {
+                        posts,
+                        loggedIn: req.session.user_id,
+                        homepage: true
+                    })
+                }).catch(err => res.status(500).json(err));
+            } else {
+                Post.findAll({
+                    where: {
+                        year: {
+                            [Op.lte]: [1959]
+                        }
+                    },
+                    order: [['created_at', 'DESC']],
+                    include: [
+                        {
+                            model: Comment,
+                            attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                            include: [
+                                {
+                                    model: User,
+                                    attributes: ['username']
+                                }
+                            ]
+                        },
+                        {
+                            model: User,
+                            attributes: ['username']
+                        },
+                        {
+                            model: Vote,
+                            attributes: ['user_id', 'post_id']
+                        }
+                    ]
+                }).then(data => {
+                    const posts = data.map(post => post.get({ plain: true }));
+                    res.render('homepage', {
+                        posts,
+                        loggedIn: req.session.user_id,
+                        homepage: true
+                    })
+                }).catch(err => res.status(500).json(err));
             }
-        ]
-    }).then(data => {
-        const posts = data.map(post => post.get({ plain: true }));
-        res.render('homepage', {
-            posts,
-            loggedIn: req.session.user_id,
-            homepage: true
-        })
-    })
+            break;
+        case 'formats':
+            Post.findAll({
+                where: {
+                    format: filter
+                },
+                order: [['created_at', 'DESC']],
+                include: [
+                    {
+                        model: Comment,
+                        attributes: ['comment_text', 'user_id', 'post_id', 'created_at'],
+                        include: [
+                            {
+                                model: User,
+                                attributes: ['username']
+                            }
+                        ]
+                    },
+                    {
+                        model: User,
+                        attributes: ['username']
+                    },
+                    {
+                        model: Vote,
+                        attributes: ['user_id', 'post_id']
+                    }
+                ]
+            }).then(data => {
+                const posts = data.map(post => post.get({ plain: true }));
+                res.render('homepage', {
+                    posts,
+                    loggedIn: req.session.user_id,
+                    homepage: true
+                })
+            }).catch(err => res.status(500).json(err));
+    }
+
+    
 });
 // single post
 router.get('/post/:id', (req,res) => {
