@@ -2,7 +2,7 @@
 
 ## Description
 
-A project for the University of Texas Coding Bootcamp. This is a music social media application where users can post a picture about a song they are currently listening. They would be able to add some information about this track, sharing it with the public whom would be able to make comments after signing up as users. All songs would be filtered by music gender.
+A project for the University of Texas Coding Bootcamp. This is a music social media application where users can post a picture about a song they are currently listening. They would be able to add some information about this track, sharing it with the public whom would be able to make comments after signing up as users. All songs would be filtered by music genre.
 
 This application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
