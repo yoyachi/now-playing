@@ -2,22 +2,9 @@
 
 ## Description
 
-A project for the University of Texas Coding Bootcamp. This is a music social media application where users can post a picture about a song they are currently listening. They would be able to add some information about this track, sharing it with the public whom would be able to make comments after signing up as users. All songs would be filtered by music genre.
+A project for the University of Texas Coding Bootcamp. Now Playing is a music-focused social media app for sharing and discovering new music. Users can create posts, like posts and add comments. The home feed can be filtered based on different criteria including genre and decade. The is also a search page to find specific users or posts.
 
-This application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
-
-## Usage
-
-Please, clone the repo. Then navigate to the root folder, run the following commands from the CLI:
-
-1. Run Test:
-`` npm run test``
-
-2. Seed DB:
-``npm run seed``
-
-3. Start Server:
-``npm start server``
+This application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, MySQL and Sequelize ORM for the database, and the express-session npm package for authentication.
 
 ## Technologies Used
 
@@ -33,10 +20,12 @@ Also used
 * Bcrypt package (to hash passwords)
 * Express-session package.
 * Connect-session-sequelize package (to add authentication)
+* Node.js
+* Express.js
 * CSS
 * Bootstrap
 
-## Screenshot
+## Screenshots
 Screen Shot 2021-04-11 at 10.20.15 AM![image](https://user-images.githubusercontent.com/69886471/114311521-bb2cd380-9ab4-11eb-8168-ce78881d2146.png)
 Screen Shot 2021-04-11 at 10.22.37 AM![image](https://user-images.githubusercontent.com/69886471/114311407-38a41400-9ab4-11eb-856b-765b1c0c1616.png)
 Screen Shot 2021-04-11 at 10.25.24 AM![image](https://user-images.githubusercontent.com/69886471/114311434-5b362d00-9ab4-11eb-8810-749c951af02a.png)
