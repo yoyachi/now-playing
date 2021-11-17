@@ -36,7 +36,7 @@ Screen Shot 2021-04-11 at 10.45.45 AM![image](https://user-images.githubusercont
 ## URL 
 
 * Deployed:  **https://nowplayingapp.herokuapp.com/**
-* GitHub repo: **https://github.com/drewvena/now-playing/tree/main**
+* GitHub repo: **https://github.com/yoyachi/now-playingn**
 
 ## License
 
