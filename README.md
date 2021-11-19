@@ -1,4 +1,4 @@
-# now-playing
+# Now Playing
 
 ## Description
 
