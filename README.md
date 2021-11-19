@@ -2,7 +2,7 @@
 
 ## Description
 
-Now Playing is a music social media application that shares and discovers new appealing song. Users can post, like and make comments to posts. The home feed can be filtered based on different criteria including genre and music generation. It also presents a search page to find specific users or posts.
+Now Playing is a music social media application that shares and discovers new appealing songs. Users can post, like and make comments to posts. The home feed can be filtered based on different criteria including genre and music generation. It also presents a search page to find specific users or posts.
 
 This application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, MySQL and Sequelize ORM for the database, and the express-session npm package for authentication.
 
