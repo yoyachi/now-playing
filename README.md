@@ -28,7 +28,7 @@ Also used
 ## URL 
 
 * Deployed:  **https://nowplayingapp.herokuapp.com/**
-* GitHub repo: **https://github.com/yoyachi/now-playingn**
+* GitHub repo: **https://github.com/yoyachi/now-playing**
 
 ## Screenshots
 Screen Shot 2021-04-11 at 10.20.15 AM![image](https://user-images.githubusercontent.com/69886471/114311521-bb2cd380-9ab4-11eb-8168-ce78881d2146.png)
